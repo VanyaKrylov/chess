@@ -18,3 +18,4 @@ class*.tex
 dir*.tex
 *.bat
 *.idx
+*.db

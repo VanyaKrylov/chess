@@ -1,9 +1,0 @@
-digraph "/home/user/chess/source/chessCore/chessAPI" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_bbc033592b97f0a6c60556b35b450ac7 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="chessCore" fontname="Helvetica", fontsize="10", URL="dir_bbc033592b97f0a6c60556b35b450ac7.html"]
-  dir_4da0a7a6d152242c8dd1f72188e97829 [shape=box, label="chessAPI", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4da0a7a6d152242c8dd1f72188e97829.html"];
-  }
-}

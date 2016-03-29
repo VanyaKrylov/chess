@@ -20,3 +20,6 @@ dir*.tex
 *.idx
 *.db
 *.user
+*.md5
+*.dot
+*.js

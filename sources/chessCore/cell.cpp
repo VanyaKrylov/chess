@@ -1,6 +1,6 @@
 #include "cell.h"
 
-cell::cell()
+Cell::Cell()
 {
 
 }

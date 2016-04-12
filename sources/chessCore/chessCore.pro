@@ -15,8 +15,8 @@ SOURCES += chesscore.cpp \
     cell.cpp
 
 HEADERS += chesscore.h \
-    figure.h \
-    cell.h
+    cell.h \
+    figures.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

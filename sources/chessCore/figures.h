@@ -30,6 +30,18 @@ public:
     virtual void checkPossibleMoves(vector<Cell> &ArrayOfMoves)=0;
 
     /**
+     * @brief getPosition - the position on the Board of the current figure
+     * @return reference to cell
+     */
+    virtual Cell& getPosition()=0;
+
+    /**
+     * @brief setPosition - sets position of the current figure
+     * @param cell - position on board
+     */
+    virtual void setPosition(Cell &cell)=0;
+
+    /**
      * @brief ~Figure - destructor
      */
     virtual ~Figure(){}
@@ -39,16 +51,19 @@ public:
 class Pawn:public Figure
 {
 public:
-    Pawn(bool);
+    Pawn(bool, Cell&);
     ~Pawn();
 
     void setColor(bool color);
     bool getColor();
     int getFigureType();
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    Cell& getPosition();
+    void setPosition(Cell &cell);
 
 private:
     bool Color;
+    Cell Pos;
 };
 
 
@@ -56,16 +71,19 @@ private:
 class Knight:public Figure
 {
 public:
-    Knight(bool);
+    Knight(bool, Cell&);
     ~Knight();
 
     void setColor(bool color);
     bool getColor();
     int getFigureType();
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    Cell& getPosition();
+    void setPosition(Cell &cell);
 
 private:
     bool Color;
+    Cell Pos;
 };
 
 
@@ -73,16 +91,19 @@ private:
 class Bishop:public Figure
 {
 public:
-    Bishop(bool);
+    Bishop(bool, Cell&);
     ~Bishop();
 
     void setColor(bool color);
     bool getColor();
     int getFigureType();
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    Cell& getPosition();
+    void setPosition(Cell &cell);
 
 private:
     bool Color;
+    Cell Pos;
 };
 
 
@@ -90,16 +111,19 @@ private:
 class Rook:public Figure
 {
 public:
-    Rook(bool);
+    Rook(bool, Cell&);
     ~Rook();
 
     void setColor(bool color);
     bool getColor();
     int getFigureType();
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    Cell& getPosition();
+    void setPosition(Cell &cell);
 
 private:
     bool Color;
+    Cell Pos;
 };
 
 
@@ -107,16 +131,19 @@ private:
 class King:public Figure
 {
 public:
-    King(bool);
+    King(bool, Cell&);
     ~King();
 
     void setColor(bool color);
     bool getColor();
     int getFigureType();
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    Cell& getPosition();
+    void setPosition(Cell &cell);
 
 private:
     bool Color;
+    Cell Pos;
 };
 
 
@@ -124,15 +151,18 @@ private:
 class Queen:public Figure
 {
 public:
-    Queen(bool);
+    Queen(bool, Cell&);
     ~Queen();
 
     void setColor(bool color);
     bool getColor();
     int getFigureType();
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    Cell& getPosition();
+    void setPosition(Cell &cell);
 
 private:
     bool Color;
+    Cell Pos;
 };
 #endif // FIGURE_H

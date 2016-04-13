@@ -1,18 +1,23 @@
 #ifndef CELL_H
 #define CELL_H
+#include "figures.h"
 
 
 class Cell
 {
 
-    Figure fig;
-    int x;
-    int y;
-
 public:
     Cell();
 
+    int getX();
+    void setX(int x);
+    int getY();
+    void setY(int y);
 
+private:
+
+    int x;
+    int y;
 
 };
 

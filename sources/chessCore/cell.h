@@ -1,18 +1,21 @@
 #ifndef CELL_H
 #define CELL_H
-#include "figures.h"
+
 
 
 class Cell
 {
 
 public:
-    Cell();
+    Cell(int x, int y) : x(x), y(y) {}
 
-    int getX();
-    void setX(int x);
-    int getY();
-    void setY(int y);
+    int getX() const { return x; }
+
+    void setX(const int x) { this->x=x; }
+
+    int getY() const { return y; }
+
+    void setY(const int y) { this->y=y; }
 
 private:
 

@@ -15,13 +15,13 @@ public:
      * @brief getColor - shows the color of the current figure
      * @return boolean value of the color. 0 - black, 1 - white
      */
-    virtual bool getColor()=0;
+    virtual bool getColor() const = 0;
 
     /**
      * @brief setColor - sets the color of the current figure
      * @param color: 0 - black, 1 - white
      */
-    virtual void setColor(bool color)=0;
+    virtual void setColor(const bool color) = 0;
 
     /**
      * @brief checkPossibleMoves - gives a list of possible moves for current figure according to the rules of the game
@@ -33,13 +33,13 @@ public:
      * @brief getPosition - the position on the Board of the current figure
      * @return reference to cell
      */
-    virtual Cell& getPosition()=0;
+    virtual Cell& getPosition() const = 0;
 
     /**
      * @brief setPosition - sets position of the current figure
      * @param cell - position on board
      */
-    virtual void setPosition(Cell &cell)=0;
+    virtual void setPosition(const Cell &cell)=0;
 
     /**
      * @brief ~Figure - destructor
@@ -54,12 +54,15 @@ public:
     Pawn(bool, Cell&);
     ~Pawn();
 
-    void setColor(bool color);
-    bool getColor();
-    int getFigureType();
+    void setColor(const bool color) { this->Color=color; }
+
+    bool getColor() const { return Color; }
+
+    Cell& getPosition() const { return Pos; }
+
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
-    Cell& getPosition();
-    void setPosition(Cell &cell);
+
+    void setPosition(const Cell &cell);
 
 private:
     bool Color;

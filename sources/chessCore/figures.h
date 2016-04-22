@@ -51,7 +51,7 @@ public:
 class Pawn:public Figure
 {
 public:
-    Pawn(bool, Cell&);
+    Pawn(bool color, Cell& pos) : Color(color), Pos(pos) {}
     ~Pawn();
 
     void setColor(const bool color) { this->Color=color; }
@@ -74,14 +74,17 @@ private:
 class Knight:public Figure
 {
 public:
-    Knight(bool, Cell&);
+    Knight(bool color, Cell& pos) : Color(color), Pos(pos) {}
     ~Knight();
 
-    void setColor(bool color);
-    bool getColor();
-    int getFigureType();
+    void setColor(const bool color) { this->Color=color; }
+
+    bool getColor() const { return Color; }
+
+    Cell& getPosition() const { return Pos; }
+
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
-    Cell& getPosition();
+
     void setPosition(Cell &cell);
 
 private:
@@ -94,14 +97,17 @@ private:
 class Bishop:public Figure
 {
 public:
-    Bishop(bool, Cell&);
+    Bishop(bool color, Cell& pos) : Color(color), Pos(pos) {}
     ~Bishop();
 
-    void setColor(bool color);
-    bool getColor();
-    int getFigureType();
+    void setColor(const bool color) { this->Color=color; }
+
+    bool getColor() const { return Color; }
+
+    Cell& getPosition() const { return Pos; }
+
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
-    Cell& getPosition();
+
     void setPosition(Cell &cell);
 
 private:
@@ -114,14 +120,17 @@ private:
 class Rook:public Figure
 {
 public:
-    Rook(bool, Cell&);
+    Rook(bool color, Cell& pos) : Color(color), Pos(pos) {}
     ~Rook();
 
-    void setColor(bool color);
-    bool getColor();
-    int getFigureType();
+    void setColor(const bool color) { this->Color=color; }
+
+    bool getColor() const { return Color; }
+
+    Cell& getPosition() const { return Pos; }
+
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
-    Cell& getPosition();
+
     void setPosition(Cell &cell);
 
 private:
@@ -134,14 +143,17 @@ private:
 class King:public Figure
 {
 public:
-    King(bool, Cell&);
+    King(bool color, Cell& pos) : Color(color), Pos(pos) {}
     ~King();
 
-    void setColor(bool color);
-    bool getColor();
-    int getFigureType();
+    void setColor(const bool color) { this->Color=color; }
+
+    bool getColor() const { return Color; }
+
+    Cell& getPosition() const { return Pos; }
+
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
-    Cell& getPosition();
+
     void setPosition(Cell &cell);
 
 private:
@@ -154,14 +166,17 @@ private:
 class Queen:public Figure
 {
 public:
-    Queen(bool, Cell&);
+    Queen(bool color, Cell& pos) : Color(color), Pos(pos) {}
     ~Queen();
 
-    void setColor(bool color);
-    bool getColor();
-    int getFigureType();
+    void setColor(const bool color) { this->Color=color; }
+
+    bool getColor() const { return Color; }
+
+    Cell& getPosition() const { return Pos; }
+
     void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
-    Cell& getPosition();
+
     void setPosition(Cell &cell);
 
 private:

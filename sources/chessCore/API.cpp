@@ -1,4 +1,4 @@
-#include "chesscore.h"
+#include "API.h"
 
 
 ChessCore::ChessCore()

@@ -1,7 +1,8 @@
 #include "cell.h"
 
-Cell::Cell()
+Cell::Cell(const Cell& cell)
 {
-
+    x = cell.x;
+    y = cell.y;
 }
 

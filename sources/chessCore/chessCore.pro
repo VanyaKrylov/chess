@@ -10,13 +10,17 @@ TARGET = chessCore
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += chesscore.cpp \
+SOURCES += \
     figure.cpp \
-    cell.cpp
+    cell.cpp \
+    API.cpp \
+    board.cpp
 
-HEADERS += chesscore.h \
+HEADERS += \
     cell.h \
-    figures.h
+    figures.h \
+    API.h \
+    board.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

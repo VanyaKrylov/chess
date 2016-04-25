@@ -1,12 +1,37 @@
 #include "figures.h"
 
-Pawn::setPosition(const Cell &cell)
+void Pawn::setPosition(const Cell &cell)
 {
     Pos.setX(cell.getX());
     Pos.setY(cell.getY());
 }
 
-Pawn::checkPossibleMoves(vector<Cell> &ArrayOfMoves)
+void Knight::setPosition(const Cell &cell)
 {
+    Pos.setX(cell.getX());
+    Pos.setY(cell.getY());
+}
 
+void Bishop::setPosition(const Cell &cell)
+{
+    Pos.setX(cell.getX());
+    Pos.setY(cell.getY());
+}
+
+void Rook::setPosition(const Cell &cell)
+{
+    Pos.setX(cell.getX());
+    Pos.setY(cell.getY());
+}
+
+void King::setPosition(const Cell &cell)
+{
+    Pos.setX(cell.getX());
+    Pos.setY(cell.getY());
+}
+
+void Queen::setPosition(const Cell &cell)
+{
+    Pos.setX(cell.getX());
+    Pos.setY(cell.getY());
 }

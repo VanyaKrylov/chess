@@ -14,7 +14,8 @@ SOURCES += \
     figure.cpp \
     cell.cpp \
     API.cpp \
-    board.cpp
+    board.cpp \
+    main.cpp
 
 HEADERS += \
     cell.h \

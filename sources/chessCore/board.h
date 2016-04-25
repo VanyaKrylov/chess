@@ -8,13 +8,16 @@ class Board
 public:
     Board();
 
-    addFigure(Figure* fig);
-    removeFigure(Cell& pos);
-    changePosition(Cell& pos1, Cell& pos2);
+    void addFigure(Figure* fig);
+    void removeFigure(Cell& pos);
+    void selectFigure(Cell& cell);
+    void changePosition(Cell& pos1, Cell& pos2);
+    bool isFigureSelected();
+    Figure* getFigure(Cell& pos);
 
 private:
     Figure* pFigures[8][8];
-
+    Figure* selectedFigure;
 
 };
 

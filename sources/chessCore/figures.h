@@ -4,6 +4,7 @@
 #include "cell.h"
 
 
+
 /**
  * @brief The Figure class - abstract class for figures
  */
@@ -27,13 +28,13 @@ public:
      * @brief checkPossibleMoves - gives a list of possible moves for current figure according to the rules of the game
      * @param ArrayOfMoves - vector of Cells - possible positions to move current figure
      */
-    virtual void checkPossibleMoves(vector<Cell> &ArrayOfMoves)=0;
+    //virtual void checkPossibleMoves(vector<Cell> &ArrayOfMoves)=0;
 
     /**
      * @brief getPosition - the position on the Board of the current figure
      * @return reference to cell
      */
-    virtual Cell& getPosition() const = 0;
+    virtual Cell& getPosition() = 0;
 
     /**
      * @brief setPosition - sets position of the current figure
@@ -58,9 +59,9 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() const { return Pos; }
+    Cell& getPosition() { return Pos; }
 
-    void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    //void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
 
     void setPosition(const Cell &cell);
 
@@ -81,11 +82,11 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() const { return Pos; }
+    Cell& getPosition() { return Pos; }
 
-    void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    //void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
 
-    void setPosition(Cell &cell);
+    void setPosition(const Cell &cell);
 
 private:
     bool Color;
@@ -104,11 +105,11 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() const { return Pos; }
+    Cell& getPosition() { return Pos; }
 
-    void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    //void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
 
-    void setPosition(Cell &cell);
+    void setPosition(const Cell &cell);
 
 private:
     bool Color;
@@ -127,11 +128,11 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() const { return Pos; }
+    Cell& getPosition() { return Pos; }
 
-    void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    //void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
 
-    void setPosition(Cell &cell);
+    void setPosition(const Cell &cell);
 
 private:
     bool Color;
@@ -150,11 +151,11 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() const { return Pos; }
+    Cell& getPosition() { return Pos; }
 
-    void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    //void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
 
-    void setPosition(Cell &cell);
+    void setPosition(const Cell &cell);
 
 private:
     bool Color;
@@ -173,11 +174,11 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() const { return Pos; }
+    Cell& getPosition(){ return Pos; }
 
-    void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
+    //void checkPossibleMoves(vector<Cell> &ArrayOfMoves);
 
-    void setPosition(Cell &cell);
+    void setPosition(const Cell &cell);
 
 private:
     bool Color;

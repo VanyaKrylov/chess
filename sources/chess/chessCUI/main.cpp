@@ -13,7 +13,6 @@ std::string getFigureType(Figure* fig)
     Pawn* pPawn = dynamic_cast<Pawn*>(fig);
     if (pPawn)
     {
-        //return "P";
 
         color = fig->getColor();
         if(color == 0)
@@ -25,44 +24,39 @@ std::string getFigureType(Figure* fig)
     Knight* pKnight = dynamic_cast<Knight*>(fig);
     if (pKnight)
     {
-        //return "k";
 
         color = fig->getColor();
         if (color == 0)
-            cout << "BK";
+            return "BK";
         else
-            cout << "WK";
+            return "WK";
     }
 
     Bishop* pBishop = dynamic_cast<Bishop*>(fig);
     if (pBishop)
     {
 
-        //return "B";
-
         color = fig->getColor();
         if(color == 0)
-            cout << "BB";
+            return "BB";
         else
-            cout << "WB";
+            return "WB";
     }
 
     Rook* pRook = dynamic_cast<Rook*>(fig);
     if (pRook)
     {
-        //return "R";
 
         color = fig->getColor();
         if(color == 0)
             return "BR" ;
         else
-            return"WR";
+            return "WR";
     }
 
     King* pKing = dynamic_cast<King*>(fig);
     if (pKing)
     {
-        //return "K";
 
         color = fig->getColor();
         if(color == 0)
@@ -74,7 +68,6 @@ std::string getFigureType(Figure* fig)
     Queen* pQueen = dynamic_cast<Queen*>(fig);
     if (pQueen)
     {
-        //return "Q";
 
         color = fig->getColor();
         if(color == 0)
@@ -91,25 +84,15 @@ std::string getFigureType(Figure* fig)
 void startGame()
 {
     Board board;
-    //char* FigType;
-    bool color;
-    //char desk[9][9];
+
     int i,j;
 
-    Figure* fig;
+    Figure* fig = 0;
 
-    for(j=1;j<8;++j){
+    for(j=0;j<8;j++){
         for(i=0;i<8;i++){
             fig = board.getFigure(i,j);
-            //FigType = getFigureType(fig);
             cout << getFigureType(fig) << " ";
-
-            /*color = fig->getColor();
-            if(color == 0)
-                cout << "B";
-            else
-                cout << "W";
-            cout << FigType <<" ";*/
         }
         cout << endl;
     }
@@ -128,7 +111,8 @@ int main()
         {
 
         case 1:
-            startGame(); break;
+            startGame();
+            cout << "Press 2 to exit" << endl; break;
 
         case 2:
             inputValue = 0; break;

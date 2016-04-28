@@ -7,6 +7,8 @@ Board::Board()
     bool color = 0;
     Cell pos(0,0);
 
+    pos.setX(0);
+    pos.setY(0);
     pFigures[0][0] = new Rook(color,pos);
 
     pos.setX(1);
@@ -48,6 +50,12 @@ Board::Board()
 
     pos.setX(2);
     pFigures[2][7] = new Bishop(color,pos);
+
+    pos.setX(3);
+    pFigures[3][7] = new King(color,pos);
+
+    pos.setX(4);
+    pFigures[4][7] = new Queen(color,pos);
 
     pos.setX(7);
     pFigures[7][7] = new Rook(color,pos);
@@ -93,4 +101,14 @@ Figure* Board::getFigure(int x, int y)
     x = x.getX();
     y = x.getY();*/
     return pFigures[x][y];
+}
+
+Board::~Board()
+{
+    int i,j;
+    for(i=0;i<8;i++){
+        for(j=0;j<8;j++){
+            delete pFigures[i][j];
+        }
+    }
 }

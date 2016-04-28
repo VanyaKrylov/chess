@@ -7,6 +7,7 @@ class Board
 {
 public:
     Board();
+    ~Board();
 
     void addFigure(Figure* fig);
     void removeFigure(Cell& pos);

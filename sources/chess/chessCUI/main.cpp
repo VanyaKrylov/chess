@@ -1,27 +1,32 @@
 #include "board.h"
 #include <iostream>
+#include <string>
 #include <stdlib.h>
 
 using namespace std;
 
 
 
-void getFigureType(Figure* fig)
+std::string getFigureType(Figure* fig)
 {
     bool color;
     Pawn* pPawn = dynamic_cast<Pawn*>(fig);
     if (pPawn)
     {
+        //return "P";
+
         color = fig->getColor();
         if(color == 0)
-            cout << "BP";
+            return "BP";
         else
-            cout << "WP";
+            return "WP";
     }
 
     Knight* pKnight = dynamic_cast<Knight*>(fig);
     if (pKnight)
     {
+        //return "k";
+
         color = fig->getColor();
         if (color == 0)
             cout << "BK";
@@ -32,6 +37,9 @@ void getFigureType(Figure* fig)
     Bishop* pBishop = dynamic_cast<Bishop*>(fig);
     if (pBishop)
     {
+
+        //return "B";
+
         color = fig->getColor();
         if(color == 0)
             cout << "BB";
@@ -42,57 +50,66 @@ void getFigureType(Figure* fig)
     Rook* pRook = dynamic_cast<Rook*>(fig);
     if (pRook)
     {
+        //return "R";
+
         color = fig->getColor();
         if(color == 0)
-            cout << "BR" ;
+            return "BR" ;
         else
-            cout << "WR";
+            return"WR";
     }
 
     King* pKing = dynamic_cast<King*>(fig);
     if (pKing)
     {
+        //return "K";
+
         color = fig->getColor();
         if(color == 0)
-            cout << "KB";
+            return "KB";
         else
-            cout << "KW";
+            return "KW";
     }
 
     Queen* pQueen = dynamic_cast<Queen*>(fig);
     if (pQueen)
     {
+        //return "Q";
+
         color = fig->getColor();
         if(color == 0)
-            cout << "BQ";
+            return "BQ";
         else
-            cout << "WQ" ;
+            return "WQ" ;
     }
 
     if (fig == 0)
-        cout << " ";
+        return "__";
     //cout << "_";
 }
 
 void startGame()
 {
     Board board;
-    //string desk[9][9];
+    //char* FigType;
+    bool color;
+    //char desk[9][9];
     int i,j;
-    //Cell pos(i,j);
+
     Figure* fig;
 
-   /* for(i=0;i<9;i++)
-    {
-        desk[0][i] = i;
-        desk[i][0] = i;
-    }*/
-
-    for(j = 0; j < 8; j++){
-        for (i = 0; i < 8; i++){
+    for(j=1;j<8;++j){
+        for(i=0;i<8;i++){
             fig = board.getFigure(i,j);
-            getFigureType(fig);
-            cout << " ";
+            //FigType = getFigureType(fig);
+            cout << getFigureType(fig) << " ";
+
+            /*color = fig->getColor();
+            if(color == 0)
+                cout << "B";
+            else
+                cout << "W";
+            cout << FigType <<" ";*/
         }
         cout << endl;
     }
@@ -111,12 +128,19 @@ int main()
         {
 
         case 1:
-            startGame();
+            startGame(); break;
+
+        case 2:
+            inputValue = 0; break;
 
         default:
             cout << "Incorrect input value" << endl;
+            cout << "1. Start a Chess Game " << endl;
+            cout << "2. Exit " << endl;
         }
+
     }
+    cout << "Goodbye!" << endl;
 
     /*Board board;
     Figure* fig;

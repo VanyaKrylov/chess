@@ -30,9 +30,9 @@ Board::Board()
     pos.setX(5);
     pFigures[5][0] = new Bishop(color,pos);
 
-    for (i=1; i<8; i++)
+    for (i=0; i<8; i++)
     {
-        pos.setY(6);
+        pos.setY(1);
         pos.setX(i);
         pFigures[i][1] = new Pawn(color,pos);
     }
@@ -58,7 +58,7 @@ Board::Board()
     pos.setX(5);
     pFigures[5][7] = new Bishop(color,pos);
 
-    for (i=1; i<8; i++)
+    for (i=0; i<8; i++)
     {
         pos.setY(6);
         pos.setX(i);

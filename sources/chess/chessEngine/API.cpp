@@ -1,6 +1,6 @@
 #include "API.h"
 
 
-ChessCore::ChessCore()
+ChessEngine::ChessEngine()
 {
 }

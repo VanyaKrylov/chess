@@ -10,17 +10,17 @@ TARGET = chessEngine
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += chessengine.cpp \
-    API.cpp \
+SOURCES += \
     board.cpp \
     cell.cpp \
-    figure.cpp
+    figure.cpp \
+    API.cpp
 
-HEADERS += chessengine.h \
-    API.h \
+HEADERS += \
     board.h \
     cell.h \
-    figures.h
+    figures.h \
+    API.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

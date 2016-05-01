@@ -78,7 +78,7 @@ std::string getFigureType(Figure* fig)
 
     if (fig == 0)
         return "__";
-    //cout << "_";
+
 }
 
 void startGame()

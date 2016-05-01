@@ -1,12 +1,14 @@
-#ifndef CHESSCORE_H
-#define CHESSCORE_H
+#ifndef CHESSENGINE_H
+#define CHESSENGINE_H
 
 
-class ChessCore
+class ChessEngine
 {
 
 public:
-    ChessCore();
+    ChessEngine();
+
+
 };
 
-#endif // CHESSCORE_H
+#endif // CHESSENGINE_H

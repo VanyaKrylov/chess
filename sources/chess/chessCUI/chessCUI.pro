@@ -4,7 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    application.cpp
+    game.cpp
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../chessEngine/release/ -lchessEngine
@@ -21,4 +21,4 @@ else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/
 else:unix: PRE_TARGETDEPS += $$OUT_PWD/../chessEngine/libchessEngine.a
 
 HEADERS += \
-    application.h
+    game.h

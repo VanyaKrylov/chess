@@ -9,11 +9,17 @@ public:
     Board();
     ~Board();
 
+
     void addFigure(Figure* fig);
+
     void removeFigure(Cell& pos);
+
     void selectFigure(Cell& cell);
+
     void changePosition(Cell& pos1, Cell& pos2);
+
     bool isFigureSelected();
+
     Figure* getFigure(int x, int y);
 
 private:

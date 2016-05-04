@@ -77,22 +77,25 @@ Board::Board()
     {
         for(i=0;i<8;i++)
         {
-            pFigures[i][j] = 0;
+            pFigures[i][j] = nullptr;
         }
     }
+
+    selectedFigure = nullptr;
 }
 
-void Board::changePosition(Cell &pos1, Cell &pos2)
+void Board::changePosition(Cell& pos)
 {
     int x0,y0,x,y;
-
-    x0 = pos1.getX();
-    y0 = pos1.getY();
-    x = pos2.getX();
-    y = pos2.getY();
+    Cell selected_figure_position(selectedFigure->getPosition());
+    x0 = selected_figure_position.getX();
+    y0 = selected_figure_position.getY();
+    x = pos.getX();
+    y = pos.getY();
 
     pFigures[x][y] = pFigures[x0][y0];
-    pFigures[x0][y0] = 0;
+    pFigures[x0][y0] = nullptr;
+    selectedFigure = nullptr;
 }
 
 Figure* Board::getFigure(int x, int y)

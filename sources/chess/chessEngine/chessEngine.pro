@@ -9,6 +9,7 @@ QT       -= core gui
 TARGET = chessEngine
 TEMPLATE = lib
 CONFIG += staticlib
+CONFIG += console c++11
 
 SOURCES += \
     board.cpp \

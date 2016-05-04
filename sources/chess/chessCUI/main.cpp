@@ -76,7 +76,7 @@ std::string getFigureType(Figure* fig)
             return "WQ" ;
     }
 
-    if (fig == 0)
+    if (fig == nullptr)
         return "__";
 
 }
@@ -89,7 +89,9 @@ void startGame()
 
     Figure* fig = 0;
 
+    cout << "  A  B  C  D  E  F  G  H" << endl;
     for(j=0;j<8;j++){
+        cout << j+1 << " ";
         for(i=0;i<8;i++){
             fig = board.getFigure(i,j);
             cout << getFigureType(fig) << " ";

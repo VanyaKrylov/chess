@@ -1,6 +1,6 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
-#include "board.h"
+#include "API.h"
 #include <iostream>
 #include <string>
 #include <stdlib.h>
@@ -16,8 +16,7 @@ public:
     void menu();
 
 private:
-    Board board;
-    Figure* fig;
+    ChessEngine core;
 
 };
 

@@ -21,7 +21,8 @@ HEADERS += \
     board.h \
     cell.h \
     figures.h \
-    API.h
+    API.h \
+    exceptions.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

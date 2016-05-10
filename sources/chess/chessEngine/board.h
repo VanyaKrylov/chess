@@ -47,9 +47,15 @@ public:
      */
     Figure* getFigure(int x, int y);
 
+    /**
+     * @brief getSelectedFigure - returns the selected figure
+     * @return returns pointer to the SelectedFigure
+     */
+    Figure* getSelectedFigure();
+
 private:
     Figure* pFigures[8][8];
-    Figure* selectedFigure;
+    Figure* SelectedFigure;
 
 };
 

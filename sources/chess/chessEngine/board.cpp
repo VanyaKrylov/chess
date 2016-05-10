@@ -81,21 +81,36 @@ Board::Board()
         }
     }
 
-    selectedFigure = nullptr;
+    SelectedFigure = nullptr;
+}
+
+void Board::selectFigure(Cell &cell)
+{
+    int x,y;
+    x = cell.getX();
+    y = cell.getY();
+    if ( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else
+        SelectedFigure = pFigures[x][y];
 }
 
 void Board::changePosition(Cell& pos)
 {
     int x0,y0,x,y;
-    Cell selected_figure_position(selectedFigure->getPosition());
+    Cell selected_figure_position(SelectedFigure->getPosition());
     x0 = selected_figure_position.getX();
     y0 = selected_figure_position.getY();
     x = pos.getX();
     y = pos.getY();
 
-    pFigures[x][y] = pFigures[x0][y0];
-    pFigures[x0][y0] = nullptr;
-    selectedFigure = nullptr;
+    if ( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else{
+        pFigures[x][y] = pFigures[x0][y0];
+        pFigures[x0][y0] = nullptr;
+        SelectedFigure = nullptr;
+    }
 }
 
 Figure* Board::getFigure(int x, int y)
@@ -103,7 +118,42 @@ Figure* Board::getFigure(int x, int y)
     /*int x,y;
     x = x.getX();
     y = x.getY();*/
-    return pFigures[x][y];
+    if ( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else
+        return pFigures[x][y];
+}
+
+bool Board::isFigureSelected()
+{
+    if (SelectedFigure == nullptr)
+        return 0;
+    else
+        return 1;
+}
+
+void Board::addFigure(Figure *fig)
+{
+    int x,y;
+    Cell pos(fig->getPosition());
+    x = pos.getX();
+    y = pos.getY();
+    if ( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else
+        pFigures[x][y] = fig;
+}
+
+void Board::removeFigure(Cell &pos)
+{
+    int x,y;
+    x = pos.getX();
+    y = pos.getY();
+    if ( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else
+        pFigures[x][y] = nullptr;
+
 }
 
 Board::~Board()

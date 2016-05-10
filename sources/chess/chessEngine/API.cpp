@@ -6,19 +6,33 @@ ChessEngine::ChessEngine()
 
 }
 
-void ChessEngine::chooseFigure(Cell &pos)
+void ChessEngine::chooseFigure(int x, int y)
 {
 
-    if( (pos.getX()>7) || (pos.getY()>7) || (pos.getX()<0) || (pos.getY()<0) )
-        throw OutOfBoardException(pos.getX(),pos.getY());
-    else
+    if( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else{
+        Cell pos(x,y);
         board.selectFigure(pos);
+    }
 }
 
-void ChessEngine::moveFigure(Cell &pos)
+void ChessEngine::moveFigure(int x,int y)
 {
-    if(board.isFigureSelected() == 0)
-        throw FigureNotSelectedException();
-    else
+    if( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else{
+        Cell pos(x,y);
         board.changePosition(pos);
+    }
+}
+
+Figure* ChessEngine::getFigure(int x, int y)
+{
+    if( (x>7) || (y>7) || (x<0) || (y<0) )
+        throw OutOfBoardException(x,y);
+    else{
+        Cell pos(x,y);
+        return board.getFigure(pos);
+    }
 }

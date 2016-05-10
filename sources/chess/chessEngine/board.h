@@ -45,7 +45,7 @@ public:
      * @param y
      * @return pointer to Figure object
      */
-    Figure* getFigure(int x, int y);
+    Figure* getFigure(Cell& pos);
 
     /**
      * @brief getSelectedFigure - returns the selected figure

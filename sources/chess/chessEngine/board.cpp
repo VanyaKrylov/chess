@@ -113,11 +113,11 @@ void Board::changePosition(Cell& pos)
     }
 }
 
-Figure* Board::getFigure(int x, int y)
+Figure* Board::getFigure(Cell &pos)
 {
-    /*int x,y;
-    x = x.getX();
-    y = x.getY();*/
+    int x,y;
+    x = pos.getX();
+    y = pos.getY();
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException(x,y);
     else

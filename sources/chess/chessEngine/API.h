@@ -12,13 +12,15 @@ public:
      * @brief choose the element on the board
      * @param pos - reference to Cell object which contains position of the element to be chosen
      */
-    void chooseFigure(Cell& pos);
+    void chooseFigure(int x, int y);
 
     /**
      * @brief move - move chosen figure to another position on the board
      * @param pos - reference to Cell object - position where selectedFigure will be placed
      */
-    void moveFigure(Cell& pos);
+    void moveFigure(int x, int y);
+
+    Figure* getFigure(int x, int y);
 
 
 

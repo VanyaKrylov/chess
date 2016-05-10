@@ -11,9 +11,16 @@ using namespace std;
 class Game
 {
 public:
+
     Game();
 
     void menu();
+
+    void startGame();
+
+    std::string getFigureType(Figure* fig);
+
+    void printBoard();
 
 private:
     ChessEngine core;

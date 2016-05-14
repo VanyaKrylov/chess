@@ -22,8 +22,13 @@ public:
 
     void printBoard();
 
+    void printMenu(int menuType) const;
+
+
+
 private:
     ChessEngine core;
+    bool color;
 
 };
 

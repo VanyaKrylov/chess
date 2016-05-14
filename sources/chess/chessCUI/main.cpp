@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-std::string getFigureType(Figure* fig)
+/*std::string getFigureType(Figure* fig)
 {
     bool color;
     Pawn* pPawn = dynamic_cast<Pawn*>(fig);
@@ -99,7 +99,7 @@ void startGame()
         cout << endl;
     }
 
-}
+}*/
 
 int main()
 {
@@ -113,7 +113,7 @@ int main()
         {
 
         case 1:
-            startGame();
+            //startGame();
             cout << "Press 2 to exit" << endl; break;
 
         case 2:

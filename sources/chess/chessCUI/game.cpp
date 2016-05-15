@@ -1,5 +1,8 @@
 #include "game.h"
 #include <iostream>
+#include <ios>
+
+
 
 Game::Game()
 {
@@ -107,9 +110,10 @@ void Game::menu()
 {
 
     int menuType = 1;
-    int inputValue = 3;
-    printMenu(menuType);
-    while (inputValue != 0)
+    char inputValue = '3';
+    string BadStr;
+    //printMenu(menuType);
+    while (inputValue != '0')
     {
 
         printMenu(menuType);
@@ -117,26 +121,127 @@ void Game::menu()
         switch(inputValue)
         {
 
-        case 1:
+        case '1':
             menuType = 2;
             printMenu(menuType);
             printBoard();
-
+            startGame();
+            menuType = 3;
             break;
 
-        case 0:
-            inputValue = 0; break;
+        case '0':
+            break;
 
         default:
             cout << "Incorrect input value" << endl;
+            cin.clear();
+            getline(cin,BadStr);
             break;
         }
     }
+    cout << "Goodbye!" << endl;
+}
+
+void Game::printMenu(int menuType) const
+{
+    switch (menuType) {
+    case 1:
+        cout << "1. Start a Chess Game " << endl;
+        cout << "0. Exit " << endl;
+        break;
+    case 2:
+        cout << "Enter the position of the figure you want to choose (letter)_(number)" << endl;
+        break;
+    case 3:
+        cout << "1. Make a move " << endl;
+        cout << "0. Exit " << endl;
+        break;
+    default:
+        break;
+    }
+}
+
+int Game::letterToInt(const char letter)
+{
+    int x;
+    switch(letter){
+
+    case 'a':
+        x = 1; break;
+
+    case 'b':
+        x = 2; break;
+
+    case 'c':
+        x = 3; break;
+
+    case 'd':
+        x = 4; break;
+
+    case 'e':
+        x = 5; break;
+
+    case 'f':
+        x = 6; break;
+
+    case 'g':
+        x = 7; break;
+
+    case 'h':
+        x = 8; break;
+
+    default:
+        x = 0;
+        break;
+    }
+    return x;
 }
 
 void Game::startGame()
 {
+    string BadStr;
+    bool BadInput = 0;
+    char letter;
+    int x,y;
+    cin >> letter >> y;
+    y-=1;
+    if (letterToInt(letter) == 0)
+    {
+        cout << "Incorrect input value" << endl;
+        BadInput = 1;
+    }
+    else
+        x = letterToInt(letter)-1;
 
-    int
-    while
+    if (BadInput == 0)
+    {
+        try{
+            core.chooseFigure(x,y);
+        }
+        catch(OutOfBoardException& e){
+            cout << e.what() << endl;
+        }
+
+        cout << " Enter the position you want to move the selected figure" << endl;
+        cin >> letter >> y;
+        y-=1;
+        if (letterToInt(letter) == 0)
+        {
+            cout << "Incorrect input value" << endl;
+            BadInput = 1;
+        }
+        else
+            x = letterToInt(letter)-1;
+
+        if (BadInput == 0)
+        {
+            try{
+                core.moveFigure(x,y);
+            }
+            catch(OutOfBoardException& e){
+                cout << e.what() << endl;
+            }
+        }
+    }
+
 }

@@ -9,14 +9,16 @@ public:
     ChessEngine();
 
     /**
-     * @brief choose the element on the board
-     * @param pos - reference to Cell object which contains position of the element to be chosen
+     * @brief chooseFigure - select a figure
+     * @param x - position x
+     * @param y - position y
      */
     void chooseFigure(int x, int y);
 
     /**
-     * @brief move - move chosen figure to another position on the board
-     * @param pos - reference to Cell object - position where selectedFigure will be placed
+     * @brief moveFigure
+     * @param x - x coordinate
+     * @param y - y coordinate
      */
     void moveFigure(int x, int y);
 

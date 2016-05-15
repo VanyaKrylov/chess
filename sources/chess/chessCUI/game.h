@@ -24,6 +24,8 @@ public:
 
     void printMenu(int menuType) const;
 
+    int letterToInt(const char letter);
+
 
 
 private:

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include "game.h"
 
 using namespace std;
 
@@ -101,7 +102,7 @@ void startGame()
 
 }*/
 
-int main()
+/*int main()
 {
     cout << "1. Start a Chess Game " << endl;
     cout << "2. Exit " << endl;
@@ -135,5 +136,11 @@ int main()
     fig = board.getFigure(0,7);
     Cell pos1(fig->getPosition());
     cout << pos1.getX()<< endl << pos1.getY(); */
-}
+//}
 
+int main()
+{
+    Game game;
+    game.menu();
+    return 0;
+}

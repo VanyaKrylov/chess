@@ -6,7 +6,7 @@
 
 Game::Game()
 {
-
+    color = 1;
 }
 
 
@@ -123,8 +123,8 @@ void Game::menu()
 
         case '1':
             menuType = 2;
-            printMenu(menuType);
             printBoard();
+            printMenu(menuType);
             startGame();
             menuType = 3;
             break;
@@ -208,6 +208,8 @@ void Game::startGame()
     if (letterToInt(letter) == 0)
     {
         cout << "Incorrect input value" << endl;
+        cin.clear();
+        getline(cin,BadStr);
         BadInput = 1;
     }
     else
@@ -228,6 +230,8 @@ void Game::startGame()
         if (letterToInt(letter) == 0)
         {
             cout << "Incorrect input value" << endl;
+            cin.clear();
+            getline(cin,BadStr);
             BadInput = 1;
         }
         else
@@ -239,6 +243,9 @@ void Game::startGame()
                 core.moveFigure(x,y);
             }
             catch(OutOfBoardException& e){
+                cout << e.what() << endl;
+            }
+            catch(SameColorFigureException& e){
                 cout << e.what() << endl;
             }
         }

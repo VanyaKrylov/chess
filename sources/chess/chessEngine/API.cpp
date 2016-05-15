@@ -23,7 +23,14 @@ void ChessEngine::moveFigure(int x,int y)
         throw OutOfBoardException(x,y);
     else{
         Cell pos(x,y);
-        board.changePosition(pos);
+        Figure* fig = board.getFigure(pos);
+        if(fig!=nullptr)
+        {
+            if(((board.getSelectedFigure())->getColor()) == (fig->getColor()))
+                throw SameColorFigureException();
+            else
+                board.changePosition(pos);
+        }
     }
 }
 

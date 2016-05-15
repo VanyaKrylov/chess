@@ -32,5 +32,11 @@ public:
 
 };
 
+class SameColorFigureException : public std::exception
+{
+public:
+    const char * what() {return "You can not attack your own figures";}
+};
+
 #endif // EXCEPTIONS
 

@@ -156,6 +156,11 @@ void Board::removeFigure(Cell &pos)
 
 }
 
+Figure* Board::getSelectedFigure()
+{
+    return SelectedFigure;
+}
+
 Board::~Board()
 {
     int i,j;

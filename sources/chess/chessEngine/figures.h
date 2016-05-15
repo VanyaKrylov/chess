@@ -26,9 +26,8 @@ public:
 
     /**
      * @brief checkPossibleMoves - gives a list of possible moves for current figure according to the rules of the game
-     * @param ArrayOfMoves - vector of Cells - possible positions to move current figure
      */
-    //virtual void checkPossibleMoves(vector<Cell> &ArrayOfMoves)=0;
+    virtual bool checkPossibleMoves()=0;
 
     /**
      * @brief getPosition - the position on the Board of the current figure
@@ -63,6 +62,8 @@ public:
 
     void setPosition(const Cell &cell);
 
+    bool checkPossibleMoves();
+
 private:
     bool Color;
     Cell Pos;
@@ -83,6 +84,8 @@ public:
     Cell& getPosition() { return Pos; }
 
     void setPosition(const Cell &cell);
+
+    bool checkPossibleMoves();
 
 private:
     bool Color;
@@ -105,6 +108,8 @@ public:
 
     void setPosition(const Cell &cell);
 
+    bool checkPossibleMoves();
+
 private:
     bool Color;
     Cell Pos;
@@ -125,6 +130,8 @@ public:
     Cell& getPosition() { return Pos; }
 
     void setPosition(const Cell &cell);
+
+    bool checkPossibleMoves();
 
 private:
     bool Color;
@@ -147,6 +154,8 @@ public:
 
     void setPosition(const Cell &cell);
 
+    bool checkPossibleMoves();
+
 private:
     bool Color;
     Cell Pos;
@@ -167,6 +176,8 @@ public:
     Cell& getPosition() { return Pos; }
 
     void setPosition(const Cell &cell);
+
+    bool checkPossibleMoves();
 
 private:
     bool Color;

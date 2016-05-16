@@ -169,9 +169,12 @@ bool Board::CheckPossibleMoves(Cell *pos)
     {
 
         color = SelectedFigure->getColor();
-        if((x==x0) && (y==y0+1))
+        if((x==x0) && (y==y0+1) && (getFigure(pos) == nullptr))
             return 1;
         if( (x == x0+1) && (y == y0+1) && (getFigure(pos) != nullptr) )
+            if( (getFigure(pos)->getColor()) != color)
+                return 1;
+        if( (x == x0-1) && (y == y0+1) && (getFigure(pos) != nullptr) )
             if( (getFigure(pos)->getColor()) != color)
                 return 1;
         return 0;

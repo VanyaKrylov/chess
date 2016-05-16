@@ -90,14 +90,8 @@ void Board::selectFigure(Cell *cell)
     x = cell->getX();
     y = cell->getY();
     Cell pos(x,y);
-    if(pFigures[x][y] == nullptr)
-        throw EmptyCellExceprion();
-    if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException();
-    else{
-        SelectedFigure = pFigures[x][y];
-        SelectedFigure->setPosition(pos);
-    }
+    SelectedFigure = pFigures[x][y];
+    SelectedFigure->setPosition(pos);
 }
 
 void Board::changePosition(Cell* pos)
@@ -109,14 +103,11 @@ void Board::changePosition(Cell* pos)
     x = pos->getX();
     y = pos->getY();
     Cell cell(x,y);
-    if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException();
-    else{
-        pFigures[x0][y0]->setPosition(cell);
-        pFigures[x][y] = SelectedFigure;
-        pFigures[x0][y0] = nullptr;
-        SelectedFigure = nullptr;
-    }
+    pFigures[x0][y0]->setPosition(cell);
+    pFigures[x][y] = SelectedFigure;
+    pFigures[x0][y0] = nullptr;
+    SelectedFigure = nullptr;
+
 }
 
 Figure* Board::getFigure(Cell *pos)
@@ -124,10 +115,7 @@ Figure* Board::getFigure(Cell *pos)
     int x,y;
     x = pos->getX();
     y = pos->getY();
-    if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException();
-    else
-        return pFigures[x][y];
+    return pFigures[x][y];
 }
 
 bool Board::isFigureSelected()
@@ -243,7 +231,7 @@ bool Board::CheckPossibleMoves(Cell *pos)
         else
             return "WQ" ;
     }*/
-
+    return 1;
 }
 
 Board::~Board()

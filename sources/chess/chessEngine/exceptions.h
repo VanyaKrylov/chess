@@ -33,5 +33,11 @@ public:
     const char * what() {return "This cell is empty";}
 };
 
+class AgainstTheRulesException : std::exception
+{
+public:
+    const char * what() {return "You can not move this figure like this. See the game's rules";}
+};
+
 #endif // EXCEPTIONS
 

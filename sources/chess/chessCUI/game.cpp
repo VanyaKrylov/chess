@@ -254,6 +254,9 @@ void Game::startGame()
                 catch(SameColorFigureException& e){
                     cout << e.what() << endl;
                 }
+                catch(AgainstTheRulesException& e){
+                    cout << e.what() << endl;
+                }
             }
         }
     }

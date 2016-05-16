@@ -84,42 +84,46 @@ Board::Board()
     SelectedFigure = nullptr;
 }
 
-void Board::selectFigure(Cell &cell)
+void Board::selectFigure(Cell *cell)
 {
     int x,y;
-    x = cell.getX();
-    y = cell.getY();
+    x = cell->getX();
+    y = cell->getY();
+    Cell pos(x,y);
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException(x,y);
-    else
+        throw OutOfBoardException();
+    else{
         SelectedFigure = pFigures[x][y];
+        SelectedFigure->setPosition(pos);
+    }
 }
 
-void Board::changePosition(Cell& pos)
+void Board::changePosition(Cell* pos)
 {
     int x0,y0,x,y;
-    Cell selected_figure_position(SelectedFigure->getPosition());
-    x0 = selected_figure_position.getX();
-    y0 = selected_figure_position.getY();
-    x = pos.getX();
-    y = pos.getY();
-
+    Cell* selected_figure_position = SelectedFigure->getPosition();
+    x0 = selected_figure_position->getX();
+    y0 = selected_figure_position->getY();
+    x = pos->getX();
+    y = pos->getY();
+    Cell cell(x,y);
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException(x,y);
+        throw OutOfBoardException();
     else{
-        pFigures[x][y] = pFigures[x0][y0];
+        pFigures[x0][y0]->setPosition(cell);
+        pFigures[x][y] = SelectedFigure;
         pFigures[x0][y0] = nullptr;
         SelectedFigure = nullptr;
     }
 }
 
-Figure* Board::getFigure(Cell &pos)
+Figure* Board::getFigure(Cell *pos)
 {
     int x,y;
-    x = pos.getX();
-    y = pos.getY();
+    x = pos->getX();
+    y = pos->getY();
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException(x,y);
+        throw OutOfBoardException();
     else
         return pFigures[x][y];
 }
@@ -135,22 +139,21 @@ bool Board::isFigureSelected()
 void Board::addFigure(Figure *fig)
 {
     int x,y;
-    Cell pos(fig->getPosition());
-    x = pos.getX();
-    y = pos.getY();
+    x = (fig->getPosition())->getX();
+    y = (fig->getPosition())->getY();
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException(x,y);
+        throw OutOfBoardException();
     else
         pFigures[x][y] = fig;
 }
 
-void Board::removeFigure(Cell &pos)
+void Board::removeFigure(Cell *pos)
 {
     int x,y;
-    x = pos.getX();
-    y = pos.getY();
+    x = pos->getX();
+    y = pos->getY();
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
-        throw OutOfBoardException(x,y);
+        throw OutOfBoardException();
     else
         pFigures[x][y] = nullptr;
 
@@ -159,6 +162,11 @@ void Board::removeFigure(Cell &pos)
 Figure* Board::getSelectedFigure()
 {
     return SelectedFigure;
+}
+
+bool Board::CheckPossibleMoves(Cell *pos)
+{
+
 }
 
 Board::~Board()

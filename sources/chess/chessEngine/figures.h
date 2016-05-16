@@ -5,6 +5,7 @@
 
 
 
+
 /**
  * @brief The Figure class - abstract class for figures
  */
@@ -24,16 +25,13 @@ public:
      */
     virtual void setColor(const bool color) = 0;
 
-    /**
-     * @brief checkPossibleMoves - gives a list of possible moves for current figure according to the rules of the game
-     */
-    virtual bool checkPossibleMoves()=0;
+    //virtual Figure* operator = (Figure* fig) = 0;
 
     /**
      * @brief getPosition - the position on the Board of the current figure
      * @return reference to cell
      */
-    virtual Cell& getPosition() = 0;
+    virtual Cell* getPosition() = 0;
 
     /**
      * @brief setPosition - sets position of the current figure
@@ -58,12 +56,11 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() { return Pos; }
+    Cell* getPosition() { return &Pos; }
 
     void setPosition(const Cell &cell);
 
-    bool checkPossibleMoves();
-
+    //Figure* operator =(Figure* fig){
 private:
     bool Color;
     Cell Pos;
@@ -81,11 +78,10 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() { return Pos; }
+    Cell* getPosition() { return &Pos; }
 
     void setPosition(const Cell &cell);
 
-    bool checkPossibleMoves();
 
 private:
     bool Color;
@@ -104,11 +100,10 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() { return Pos; }
+    Cell* getPosition() { return &Pos; }
 
     void setPosition(const Cell &cell);
 
-    bool checkPossibleMoves();
 
 private:
     bool Color;
@@ -127,11 +122,10 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() { return Pos; }
+    Cell* getPosition() { return &Pos; }
 
     void setPosition(const Cell &cell);
 
-    bool checkPossibleMoves();
 
 private:
     bool Color;
@@ -150,11 +144,10 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() { return Pos; }
+    Cell* getPosition() { return &Pos; }
 
     void setPosition(const Cell &cell);
 
-    bool checkPossibleMoves();
 
 private:
     bool Color;
@@ -173,11 +166,10 @@ public:
 
     bool getColor() const { return Color; }
 
-    Cell& getPosition() { return Pos; }
+    Cell* getPosition() { return &Pos; }
 
     void setPosition(const Cell &cell);
 
-    bool checkPossibleMoves();
 
 private:
     bool Color;

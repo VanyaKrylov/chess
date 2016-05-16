@@ -8,19 +8,8 @@
 class OutOfBoardException : public std::exception
 {
 
-public:
-
-    OutOfBoardException(int x, int y): x(x), y(y) {}
-
-    int getX(){return x;}
-
-    int getY(){return y;}
-
+public:   
     const char * what() {return "Wrong coordinates of the position. Moved out of the board";}
-
-private:
-    int x;
-    int y;
 
 };
 
@@ -36,6 +25,12 @@ class SameColorFigureException : public std::exception
 {
 public:
     const char * what() {return "You can not attack your own figures";}
+};
+
+class NoFigureExceprion : public std::exception
+{
+public:
+    const char * what() {return "This cell is empty";}
 };
 
 #endif // EXCEPTIONS

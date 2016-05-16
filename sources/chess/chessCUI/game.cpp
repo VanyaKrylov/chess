@@ -88,7 +88,7 @@ void Game::printBoard()
 {
     int i,j;
 
-    Figure* fig = 0;
+    Figure* fig = nullptr;
 
     if (color == 0)
         cout << "Black's move" << endl;
@@ -201,10 +201,11 @@ void Game::startGame()
 {
     string BadStr;
     bool BadInput = 0;
-    char letter;
-    int x,y;
-    cin >> letter >> y;
-    y-=1;
+    char letter,letter2;
+    int x,y,x2,y2;
+    cin >> letter;
+    cin >> y;
+    y = y-1;
     if (letterToInt(letter) == 0)
     {
         cout << "Incorrect input value" << endl;
@@ -222,12 +223,13 @@ void Game::startGame()
         }
         catch(OutOfBoardException& e){
             cout << e.what() << endl;
+
         }
 
         cout << " Enter the position you want to move the selected figure" << endl;
-        cin >> letter >> y;
-        y-=1;
-        if (letterToInt(letter) == 0)
+        cin >> letter2 >> y2;
+        y2-=1;
+        if (letterToInt(letter2) == 0)
         {
             cout << "Incorrect input value" << endl;
             cin.clear();
@@ -235,12 +237,12 @@ void Game::startGame()
             BadInput = 1;
         }
         else
-            x = letterToInt(letter)-1;
+            x2 = letterToInt(letter2)-1;
 
         if (BadInput == 0)
         {
             try{
-                core.moveFigure(x,y);
+                core.moveFigure(x2,y2);
             }
             catch(OutOfBoardException& e){
                 cout << e.what() << endl;

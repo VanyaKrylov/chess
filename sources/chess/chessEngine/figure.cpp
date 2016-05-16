@@ -36,32 +36,3 @@ void Queen::setPosition(const Cell &cell)
     Pos.setY(cell.getY());
 }
 
-bool Pawn::checkPossibleMoves()
-{
-
-}
-
-bool Bishop::checkPossibleMoves()
-{
-
-}
-
-bool Rook::checkPossibleMoves()
-{
-
-}
-
-bool Knight::checkPossibleMoves()
-{
-
-}
-
-bool King::checkPossibleMoves()
-{
-
-}
-
-bool Queen::checkPossibleMoves()
-{
-
-}

@@ -19,19 +19,19 @@ public:
      * @brief removeFigure - replaces figure from the current place on the board with a nullptr
      * @param pos - reference to Cell object of the figure's position
      */
-    void removeFigure(Cell& pos);
+    void removeFigure(Cell *pos);
 
     /**
      * @brief selectFigure - select a figure, changes the selectedFigure value
      * @param cell
      */
-    void selectFigure(Cell& cell);
+    void selectFigure(Cell *cell);
 
     /**
      * @brief changePosition - moves the selectedFigure to pos2
      * @param pos2 - reference to Cell object, contains the position
      */
-    void changePosition(Cell& pos);
+    void changePosition(Cell *pos);
 
     /**
      * @brief isFigureSelected - checks whether there is any Figure selected
@@ -45,13 +45,15 @@ public:
      * @param y
      * @return pointer to Figure object
      */
-    Figure* getFigure(Cell& pos);
+    Figure* getFigure(Cell* pos);
 
     /**
      * @brief getSelectedFigure - returns the selected figure
      * @return returns pointer to the SelectedFigure
      */
     Figure* getSelectedFigure();
+
+    bool CheckPossibleMoves(Cell* pos);
 
 private:
     Figure* pFigures[8][8];

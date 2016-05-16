@@ -27,7 +27,7 @@ public:
     const char * what() {return "You can not attack your own figures";}
 };
 
-class NoFigureExceprion : public std::exception
+class EmptyCellExceprion : public std::exception
 {
 public:
     const char * what() {return "This cell is empty";}

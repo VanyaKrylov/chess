@@ -223,34 +223,38 @@ void Game::startGame()
         }
         catch(OutOfBoardException& e){
             cout << e.what() << endl;
-
-        }
-
-        cout << " Enter the position you want to move the selected figure" << endl;
-        cin >> letter2 >> y2;
-        y2-=1;
-        if (letterToInt(letter2) == 0)
-        {
-            cout << "Incorrect input value" << endl;
-            cin.clear();
-            getline(cin,BadStr);
             BadInput = 1;
         }
-        else
-            x2 = letterToInt(letter2)-1;
+        catch(EmptyCellExceprion& e){
+            cout << e.what() << endl;
+            BadInput = 1;
+        }
+        if(BadInput == 0){
+            cout << " Enter the position you want to move the selected figure" << endl;
+            cin >> letter2 >> y2;
+            y2-=1;
+            if (letterToInt(letter2) == 0)
+            {
+                cout << "Incorrect input value" << endl;
+                cin.clear();
+                getline(cin,BadStr);
+                BadInput = 1;
+            }
+            else
+                x2 = letterToInt(letter2)-1;
 
-        if (BadInput == 0)
-        {
-            try{
-                core.moveFigure(x2,y2);
-            }
-            catch(OutOfBoardException& e){
-                cout << e.what() << endl;
-            }
-            catch(SameColorFigureException& e){
-                cout << e.what() << endl;
+            if (BadInput == 0)
+            {
+                try{
+                    core.moveFigure(x2,y2);
+                }
+                catch(OutOfBoardException& e){
+                    cout << e.what() << endl;
+                }
+                catch(SameColorFigureException& e){
+                    cout << e.what() << endl;
+                }
             }
         }
     }
-
 }

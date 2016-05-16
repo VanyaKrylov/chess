@@ -90,6 +90,8 @@ void Board::selectFigure(Cell *cell)
     x = cell->getX();
     y = cell->getY();
     Cell pos(x,y);
+    if(pFigures[x][y] == nullptr)
+        throw EmptyCellExceprion();
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException();
     else{

@@ -168,6 +168,81 @@ Figure* Board::getSelectedFigure()
 
 bool Board::CheckPossibleMoves(Cell *pos)
 {
+    bool color;
+    int x,y,x0,y0;
+    x0 = (SelectedFigure->getPosition())->getX();
+    y0 = (SelectedFigure->getPosition())->getY();
+    x = pos->getX();
+    y = pos->getY();
+
+
+    Pawn* pPawn = dynamic_cast<Pawn*>(SelectedFigure);
+    if (pPawn)
+    {
+
+        color = SelectedFigure->getColor();
+        if((x==x0) && (y==y0+1))
+            return 1;
+        if( (x == x0+1) && (y == y0+1) && (getFigure(pos) != nullptr) )
+            if( (getFigure(pos)->getColor()) != color)
+                return 1;
+        return 0;
+    }
+
+    /*Knight* pKnight = dynamic_cast<Knight*>(fig);
+    if (pKnight)
+    {
+
+        color = fig->getColor();
+        if (color == 0)
+            return "BK";
+        else
+            return "WK";
+    }
+
+    Bishop* pBishop = dynamic_cast<Bishop*>(fig);
+    if (pBishop)
+    {
+
+        color = fig->getColor();
+        if(color == 0)
+            return "BB";
+        else
+            return "WB";
+    }
+
+    Rook* pRook = dynamic_cast<Rook*>(fig);
+    if (pRook)
+    {
+
+        color = fig->getColor();
+        if(color == 0)
+            return "BR" ;
+        else
+            return "WR";
+    }
+
+    King* pKing = dynamic_cast<King*>(fig);
+    if (pKing)
+    {
+
+        color = fig->getColor();
+        if(color == 0)
+            return "KB";
+        else
+            return "KW";
+    }
+
+    Queen* pQueen = dynamic_cast<Queen*>(fig);
+    if (pQueen)
+    {
+
+        color = fig->getColor();
+        if(color == 0)
+            return "BQ";
+        else
+            return "WQ" ;
+    }*/
 
 }
 

@@ -53,6 +53,11 @@ public:
      */
     Figure* getSelectedFigure();
 
+    /**
+     * @brief CheckPossibleMoves - game logic rules
+     * @param pos - pointer to Cell object, position where the figure is supposed to be moves
+     * @return TRUE if the rules are not broken, False otherwise
+     */
     bool CheckPossibleMoves(Cell* pos);
 
 private:

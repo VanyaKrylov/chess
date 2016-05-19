@@ -157,7 +157,8 @@ Figure* Board::getSelectedFigure()
 bool Board::CheckPossibleMoves(Cell *pos)
 {
     bool color;
-    int x,y,x0,y0,i;
+    int x,y,x0,y0;
+    int count = 0;
     x0 = (SelectedFigure->getPosition())->getX();
     y0 = (SelectedFigure->getPosition())->getY();
     x = pos->getX();
@@ -221,69 +222,106 @@ bool Board::CheckPossibleMoves(Cell *pos)
     if (pBishop)
     {
 
-        while( (x0 < 0) && (y0 < 0) ){
-            x0++;
-            y0++;
-            if(pFigures[x0][y0] != nullptr)
-                return 0;
-            if((x0+1==x) && (y0+1 == y))
-                return 1;
-        }
+        if ( (fabs(y-y0)) / (fabs(x-x0) ) == 1)
+        {
+            while( (x0 < x) && (y0 < y) ){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                x0++;
+                y0++;
+                count++;
+                if( (x0 == x) && (y0 == y) )
+                    return 1;
+            }
 
-        while( (x0 < 0) && (y0 > 0) ){
-            x0++;
-            y0--;
-            if(pFigures[x0][y0] != nullptr)
-                return 0;
-            if((x0+1==x) && (y0-1 == y))
-                return 1;
-        }
+            while( (x0 < x) && (y0 > y) ){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                x0++;
+                y0--;
+                count++;
+                if( (x0 == x) && (y0 == y) )
+                    return 1;
+            }
 
-        while( (x0 > 0) && (y0 < 0) ){
-            x0--;
-            y0++;
-            if(pFigures[x0][y0] != nullptr)
-                return 0;
-            if((x0-1==x) && (y0+1 == y))
-                return 1;
-        }
+            while( (x0 > x) && (y0 < y) ){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                x0--;
+                y0++;
+                count++;
+                if( (x0 == x) && (y0 == y) )
+                    return 1;
+            }
 
-        while( (x0 > 0) && (y0 > 0) ){
-            x0--;
-            y0--;
-            if(pFigures[x0][y0] != nullptr)
-                return 0;
-            if((x0-1==x) && (y0-1 == y))
-                return 1;
+            while( (x0 > x) && (y0 > y) ){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                x0--;
+                y0--;
+                count++;
+                if( (x0 == x) && (y0 == y) )
+                    return 1;
+            }
         }
-
         return 0;
     }
 
-    /*Rook* pRook = dynamic_cast<Rook*>(SelectedFigure);
+    Rook* pRook = dynamic_cast<Rook*>(SelectedFigure);
     if (pRook)
     {
+        if(x0==x)
+        {
+            while(y0 > y){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                y0--;
+                count++;
+                if(y0==y)
+                    return 1;
+            }
 
-        color = SelectedFigure->getColor();
-        if(color == 0)
-            return "BR" ;
-        else
-            return "WR";
+            while(y0 < y){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                y0++;
+                count++;
+                if(y0==y)
+                    return 1;
+            }
+        }
+
+        if(y0==y)
+        {
+            while(x0 > x){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                x0--;
+                count++;
+                if(x0==x)
+                    return 1;
+            }
+
+            while(x0 < x){
+                if( (pFigures[x0][y0] != nullptr) && (count != 0) )
+                    return 0;
+                x0++;
+                count++;
+                if(x0==x)
+                    return 1;
+            }
+        }
+        return 0;
     }
 
-    King* pKing = dynamic_cast<King*>(SelectedFigure);
+    /*King* pKing = dynamic_cast<King*>(SelectedFigure);
     if (pKing)
     {
 
-        color = SelectedFigure->getColor();
-        if(color == 0)
-            return "KB";
-        else
-            return "KW";
     }
 
     Queen* pQueen = dynamic_cast<Queen*>(SelectedFigure);
-    if (pQueen)
+    if (pQueen)if(pFigures[x0][y0] != nullptr)
     {
 
         color = SelectedFigure->getColor();

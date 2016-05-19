@@ -1,7 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 #include"figures.h"
-
+#include <math.h>
 
 class Board
 {

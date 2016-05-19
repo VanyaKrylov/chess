@@ -39,5 +39,11 @@ public:
     const char * what() {return "You can not move this figure like this. See the game's rules";}
 };
 
+class BadDenominatorException : std::exception
+{
+public:
+    const char * what() {return "Denominator can't be 0";}
+};
+
 #endif // EXCEPTIONS
 

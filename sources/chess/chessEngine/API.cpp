@@ -1,6 +1,6 @@
 #include "API.h"
 
-
+//TODO убрать. Такой и сам сгенерируется компилятором
 ChessEngine::ChessEngine()
 {
 

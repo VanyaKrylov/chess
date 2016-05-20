@@ -4,7 +4,7 @@
 
 
 
-//TODO документировать класс
+//TODO документировать класс. http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html
 class OutOfBoardException : public std::exception
 {
 

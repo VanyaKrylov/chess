@@ -3,7 +3,7 @@
 #include "board.h"
 
 //додокументировать
-//TODO const noexcept
+//TODO где надо добавить const
 class ChessEngine
 {
 

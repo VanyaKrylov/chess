@@ -1,6 +1,7 @@
 #include "board.h"
 
-
+//Слишком длинный метод.
+//TODO разбить на более маленькие методы.
 Board::Board()
 {
     int i,j;
@@ -80,7 +81,8 @@ Board::Board()
             pFigures[i][j] = nullptr;
         }
     }
-
+    
+    //лучше инициализировать переменную все же. через список инициализации
     SelectedFigure = nullptr;
 }
 
@@ -105,6 +107,10 @@ void Board::changePosition(Cell* pos)
     Cell cell(x,y);
     pFigures[x0][y0]->setPosition(cell);
     pFigures[x][y] = SelectedFigure;
+    //Когда выделяешь память из кучи с помощью new, а потом присваиваешь nullptr, не освободив занятую память с помощью delete
+    //, то случается, что ее уже нельзя освободить. утечка.
+    //Попробуй еще валгриндом прогнать приложение. походи различным образом. по идее, он должен подтвердить
+    //TODO пофиксить утечку
     pFigures[x0][y0] = nullptr;
     SelectedFigure = nullptr;
 
@@ -124,6 +130,11 @@ bool Board::isFigureSelected()
         return 0;
     else
         return 1;
+    
+    //лучше использовать true и false, чтобы не заставлять компилятор самостоятельно преобразовывать из int в bool.
+       
+    //а лучше так:
+    //return SelectedFigure != nullptr;
 }
 
 void Board::addFigure(Figure *fig)
@@ -145,6 +156,7 @@ void Board::removeFigure(Cell *pos)
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException();
     else
+        //Тут возможна утечка, т.к без delete.
         pFigures[x][y] = nullptr;
 
 }
@@ -154,6 +166,15 @@ Figure* Board::getSelectedFigure()
     return SelectedFigure;
 }
 
+
+//Нереально длинный метод.
+//TODO разбить на более короткие методы.
+//CheckPawnPossibleMoves()
+//CheckKnightPossibleMoves()
+//и т.д.
+
+
+//TODO заменить 1 и 0 на true и false
 bool Board::CheckPossibleMoves(Cell *pos)
 {
     bool color;
@@ -333,6 +354,8 @@ bool Board::CheckPossibleMoves(Cell *pos)
     return 1; //dolzhen byt' 0
 }
 
+//Когда добавишь delete в классы выше, для избежания утечек, здесь придется проверять была ли уже освобождена память,
+//чтобы не освободить ее 2 раза. А это очень плохо, сам знаешь.
 Board::~Board()
 {
     int i,j;

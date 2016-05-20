@@ -1,7 +1,13 @@
 #ifndef BOARD_H
 #define BOARD_H
 #include"figures.h"
+
+//TODO в c++ используется cmath
 #include <math.h>
+
+//Документировать класс. имя тут надо документировать.
+//TODO везде, где надо, добавить const, noexcept.
+//Определиться с *T и * T
 
 class Board
 {
@@ -13,12 +19,16 @@ public:
      * @brief addFigure - adding a figure to the board
      * @param fig - pointer to Figure object
      */
+    
+    //* fig 
     void addFigure(Figure* fig);
 
     /**
      * @brief removeFigure - replaces figure from the current place on the board with a nullptr
      * @param pos - reference to Cell object of the figure's position
      */
+    
+    //*pos - везде по-разному
     void removeFigure(Cell *pos);
 
     /**
@@ -39,6 +49,8 @@ public:
      */
     bool isFigureSelected();
 
+
+    //TODO додокументировать x и y
     /**
      * @brief getFigure - gets the Figure from the array
      * @param x -
@@ -49,6 +61,7 @@ public:
 
     /**
      * @brief getSelectedFigure - returns the selected figure
+    //лучше без returns.
      * @return returns pointer to the SelectedFigure
      */
     Figure* getSelectedFigure();
@@ -62,6 +75,8 @@ public:
 
 private:
     Figure* pFigures[8][8];
+    
+    //с маленькой буквы - неконстантные объекты. с большой - классы
     Figure* SelectedFigure;
 
 };

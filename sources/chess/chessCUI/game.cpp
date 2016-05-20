@@ -3,13 +3,13 @@
 #include <ios>
 
 
-
+//TODO заменить списком инициализации
 Game::Game()
 {
     color = 1;
 }
 
-
+//Длинный метод. Разбить на более мелкие.
 std::string Game::getFigureType(Figure *fig)
 {
     bool color;
@@ -86,6 +86,9 @@ std::string Game::getFigureType(Figure *fig)
 
 void Game::printBoard()
 {
+    //Совет Мейерса: откладывайте объявление переменных насколько это возможно.
+    //Тут ты их испольуешь только в цикле. пускай они там и будут объявлены
+    //если где-то пропустил этот момент, то к тем местам это тоже относится
     int i,j;
 
     Figure* fig = nullptr;
@@ -197,6 +200,8 @@ int Game::letterToInt(const char letter)
     return x;
 }
 
+//Длинный метод. плохо читается.
+//TODO разбить на более маленькие.
 void Game::startGame()
 {
     string BadStr;

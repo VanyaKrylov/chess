@@ -3,10 +3,12 @@
 #include "API.h"
 #include <iostream>
 #include <string>
+//cstdlib
 #include <stdlib.h>
-
+//TODO убрать using namecpace std; сам Страуструп даже говорит так делать.
 using namespace std;
 
+//TODO добавить const noexcept, где надо.
 
 class Game
 {
@@ -30,6 +32,8 @@ public:
 
 private:
     ChessEngine core;
+    
+    //TODO bool -> enum
     bool color;
 
 };

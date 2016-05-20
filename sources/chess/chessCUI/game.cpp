@@ -230,7 +230,7 @@ void Game::startGame()
             cout << e.what() << endl;
             BadInput = 1;
         }
-        catch(EmptyCellExceprion& e){
+        catch(EmptyCellException& e){
             cout << e.what() << endl;
             BadInput = 1;
         }

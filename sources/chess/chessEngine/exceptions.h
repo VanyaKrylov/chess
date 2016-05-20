@@ -43,8 +43,7 @@ public:
 };
 
 //TODO документировать класс
-//TODO исправить опечатку в названии класса. > Exceprion
-class EmptyCellExceprion : public std::exception
+class EmptyCellException : public std::exception
 {
 public:
     //TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.

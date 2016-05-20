@@ -12,7 +12,7 @@ void ChessEngine::chooseFigure(int x, int y)
         throw OutOfBoardException();
     Cell pos(x,y);
     if((board.getFigure(&pos)) == nullptr)
-        throw EmptyCellExceprion();
+        throw EmptyCellException();
     else{
         board.selectFigure(&pos);
     }

@@ -2,6 +2,8 @@
 #define CHESSENGINE_H
 #include "board.h"
 
+//додокументировать
+//TODO const noexcept
 class ChessEngine
 {
 

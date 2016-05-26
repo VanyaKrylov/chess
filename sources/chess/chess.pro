@@ -6,4 +6,4 @@ chessCUI.depends = chessEngine
 
 SUBDIRS += \
     chessEngine \
-    chessCUI
+    chessGUI/chessGUI

@@ -136,5 +136,21 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>startButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>

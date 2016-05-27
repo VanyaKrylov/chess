@@ -8,6 +8,9 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
+#include <QApplication>
+#include <QDesktopWidget>
+#include "board.h"
 
 class MainWindow : public QMainWindow
 {
@@ -20,11 +23,13 @@ private:
     QPushButton *yes;
     QPushButton *no;
     Dialog *startMenu;
+    Board *b;
 
 signals:
 
 public slots:
-    void exitButtonPressed();
+    void startButtonPressed();
+
 };
 
 #endif // MAINWINDOW_H

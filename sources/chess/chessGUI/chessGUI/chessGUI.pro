@@ -14,12 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         startMenu.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    board.cpp
 
 HEADERS  += startMenu.h \
-    mainwindow.h
+    mainwindow.h \
+    board.h
 
-FORMS    += startMenu.ui
+FORMS    += startMenu.ui \
+    board.ui
 
 RESOURCES += \
     resources.qrc

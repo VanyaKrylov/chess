@@ -2,34 +2,32 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-    /*QHBoxLayout *hl = new QHBoxLayout;
-    QVBoxLayout *vl = new QVBoxLayout;
-    QLabel *lbl = new QLabel;
-    lbl->setText(tr("Are you sure?"));
-    yes = new QPushButton;
-    no = new QPushButton;*/
     stack = new QStackedWidget;
     startMenu = new Dialog();
-
-
-    /*hl->addWidget(yes);
-    hl->addWidget(no);
-
-    vl->addLayout(hl);
-    vl->addWidget(lbl);
-    setLayout(vl);*/
+    b = new Board();
 
     stack->addWidget(startMenu);
+    stack->addWidget(b);
     stack->setCurrentWidget(startMenu);
+
     setFixedSize(stack->currentWidget()->size());
+    move((QApplication::desktop()->width() - this->width()) /2,
+         (QApplication::desktop()->height() - this->height()) /2);
+
+    setWindowTitle(tr("Chess Game"));
     setCentralWidget(stack);
     connect(startMenu,SIGNAL(rejected()),SLOT(close()));
-    //connect(yes,SIGNAL(clicked(bool)),SLOT(close()));
-    //connect(no,SIGNAL(clicked(bool)),SLOT(noButtonPressed()));
+    connect(startMenu,SIGNAL(accepted()),SLOT(startButtonPressed()));
+    close();
 
 }
 
-void MainWindow::exitButtonPressed()
+
+void MainWindow::startButtonPressed()
 {
-    close();
+    stack->setCurrentWidget(b);
+    setFixedSize(stack->currentWidget()->size());
+    move((QApplication::desktop()->width() - this->width()) /2,
+         (QApplication::desktop()->height() - this->height()) /2);
+    setCentralWidget(stack);
 }

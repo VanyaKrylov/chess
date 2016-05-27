@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>startMenu.png</file>
+        <file>board.png</file>
         <file>1.png</file>
         <file>2.png</file>
         <file>3.png</file>
@@ -13,6 +14,5 @@
         <file>10.png</file>
         <file>11.png</file>
         <file>12.png</file>
-        <file>board.png</file>
     </qresource>
 </RCC>

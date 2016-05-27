@@ -6,6 +6,7 @@ Board::Board(QWidget *parent) :
     ui(new Ui::Board)
 {
     ui->setupUi(this);
+
     QPalette pal;
     pal.setBrush(backgroundRole(),QPixmap(":/board.png"));
     setPalette(pal);

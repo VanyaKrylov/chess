@@ -1,4 +1,4 @@
-#include "cell.h"
+#include "mycell.h"
 
 //TODO список инициализации
 //Когда происходить присваивание с помощью оператора =, не происходит инициализации объекта.
@@ -9,7 +9,7 @@
 //Cell::Cell(const Cell &cell) noexcept : x(cell.x), y(cell.y) {}
 
 //в заголовочном файле Cell& cell, а тут Cell &cell. Мне кажется, что код лучше выглядит, когда используется один синтаксис.
-Cell::Cell(const Cell &cell)
+myCell::myCell(const myCell &cell)
 {
     x = cell.x;
     y = cell.y;

@@ -1,4 +1,3 @@
-/*#include "board.h"
 #include <iostream>
 #include <string>
 //cstdlib
@@ -18,4 +17,4 @@ int main()
     game.menu();
     return 0;
 }
-*/
+

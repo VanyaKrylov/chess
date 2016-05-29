@@ -1,3 +1,4 @@
+#pragma once
 #ifndef STARTMENU_H
 #define STARTMENU_H
 

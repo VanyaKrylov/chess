@@ -20,7 +20,7 @@ public:
 
     void startGame();
 
-    std::string getFigureType(Figure* fig);
+    std::string getFigureType(myFigure* fig);
 
     void printBoard();
 

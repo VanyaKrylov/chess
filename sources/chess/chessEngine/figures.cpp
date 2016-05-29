@@ -8,39 +8,39 @@
 //Можно добавить реализацию прямо в класс Figure.
 //Либо можно сделать класс типа AbstractFigure и вынести в него только интерфейс. А в Figure будет общая реализация.
 
-void Pawn::setPosition(const Cell &cell)
+void Pawn::setFigPosition(const myCell &cell)
 {
-    Pos.setX(cell.getX());
-    Pos.setY(cell.getY());
+    Pos.setXval(cell.getXval());
+    Pos.setYval(cell.getYval());
 }
 
-void Knight::setPosition(const Cell &cell)
+void Knight::setFigPosition(const myCell &cell)
 {
-    Pos.setX(cell.getX());
-    Pos.setY(cell.getY());
+    Pos.setXval(cell.getXval());
+    Pos.setYval(cell.getYval());
 }
 
-void Bishop::setPosition(const Cell &cell)
+void Bishop::setFigPosition(const myCell &cell)
 {
-    Pos.setX(cell.getX());
-    Pos.setY(cell.getY());
+    Pos.setXval(cell.getXval());
+    Pos.setYval(cell.getYval());
 }
 
-void Rook::setPosition(const Cell &cell)
+void Rook::setFigPosition(const myCell &cell)
 {
-    Pos.setX(cell.getX());
-    Pos.setY(cell.getY());
+    Pos.setXval(cell.getXval());
+    Pos.setYval(cell.getYval());
 }
 
-void King::setPosition(const Cell &cell)
+void King::setFigPosition(const myCell &cell)
 {
-    Pos.setX(cell.getX());
-    Pos.setY(cell.getY());
+    Pos.setXval(cell.getXval());
+    Pos.setYval(cell.getYval());
 }
 
-void Queen::setPosition(const Cell &cell)
+void Queen::setFigPosition(const myCell &cell)
 {
-    Pos.setX(cell.getX());
-    Pos.setY(cell.getY());
+    Pos.setXval(cell.getXval());
+    Pos.setYval(cell.getYval());
 }
 

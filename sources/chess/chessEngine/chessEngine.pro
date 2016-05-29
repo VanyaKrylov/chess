@@ -12,17 +12,17 @@ CONFIG += staticlib
 CONFIG += console c++11
 
 SOURCES += \
-    board.cpp \
-    cell.cpp \
-    figure.cpp \
-    API.cpp
+    API.cpp \
+    boardLogic.cpp \
+    mycell.cpp \
+    figures.cpp
 
 HEADERS += \
-    board.h \
-    cell.h \
     figures.h \
     API.h \
-    exceptions.h
+    exceptions.h \
+    boardLogic.h \
+    mycell.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

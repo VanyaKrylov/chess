@@ -1,3 +1,4 @@
+#pragma once
 #ifndef EXCEPTIONS
 #define EXCEPTIONS
 #include <exception>

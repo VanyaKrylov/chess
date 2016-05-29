@@ -1,7 +1,8 @@
+#pragma once
 #ifndef CHESSENGINE_H
 #define CHESSENGINE_H
-#include "board.h"
-
+#include "boardLogic.h"
+#include "exceptions.h"
 //додокументировать
 //TODO где надо добавить const
 class ChessEngine
@@ -15,17 +16,18 @@ public:
      * @param x - position x
      * @param y - position y
      */
-    void chooseFigure(int x, int y);
+    void chooseMyFigure(int x, int y);
 
     /**
      * @brief moveFigure
      * @param x - x coordinate
      * @param y - y coordinate
      */
-    void moveFigure(int x, int y);
+    void moveMyFigure(int x, int y);
 
-    Figure* getFigure(int x, int y);
+    myFigure* getMyFigure(int x, int y);
 
+    bool isFigureSelected();
 
 
 private:
@@ -36,7 +38,7 @@ private:
     //profit.
     
     //ну это так, на будущее. 
-    Board board;
+    BoardLogic chessBoard;
 
 
 };

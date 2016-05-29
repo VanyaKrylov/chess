@@ -10,14 +10,14 @@ Game::Game()
 }
 
 //Длинный метод. Разбить на более мелкие.
-std::string Game::getFigureType(Figure *fig)
+std::string Game::getFigureType(myFigure *fig)
 {
     bool color;
     Pawn* pPawn = dynamic_cast<Pawn*>(fig);
     if (pPawn)
     {
 
-        color = fig->getColor();
+        color = fig->getFigColor();
         if(color == 0)
             return "BP";
         else
@@ -28,7 +28,7 @@ std::string Game::getFigureType(Figure *fig)
     if (pKnight)
     {
 
-        color = fig->getColor();
+        color = fig->getFigColor();
         if (color == 0)
             return "BK";
         else
@@ -39,7 +39,7 @@ std::string Game::getFigureType(Figure *fig)
     if (pBishop)
     {
 
-        color = fig->getColor();
+        color = fig->getFigColor();
         if(color == 0)
             return "BB";
         else
@@ -50,7 +50,7 @@ std::string Game::getFigureType(Figure *fig)
     if (pRook)
     {
 
-        color = fig->getColor();
+        color = fig->getFigColor();
         if(color == 0)
             return "BR" ;
         else
@@ -61,7 +61,7 @@ std::string Game::getFigureType(Figure *fig)
     if (pKing)
     {
 
-        color = fig->getColor();
+        color = fig->getFigColor();
         if(color == 0)
             return "KB";
         else
@@ -72,7 +72,7 @@ std::string Game::getFigureType(Figure *fig)
     if (pQueen)
     {
 
-        color = fig->getColor();
+        color = fig->getFigColor();
         if(color == 0)
             return "BQ";
         else
@@ -91,7 +91,7 @@ void Game::printBoard()
     //если где-то пропустил этот момент, то к тем местам это тоже относится
     int i,j;
 
-    Figure* fig = nullptr;
+    myFigure* fig = nullptr;
 
     if (color == 0)
         cout << "Black's move" << endl;
@@ -102,7 +102,7 @@ void Game::printBoard()
     for(j=0;j<8;j++){
         cout << j+1 << " ";
         for(i=0;i<8;i++){
-            fig = core.getFigure(i,j);
+            fig = core.getMyFigure(i,j);
             cout << getFigureType(fig) << " ";
         }
         cout << endl;
@@ -224,7 +224,7 @@ void Game::startGame()
     if (BadInput == 0)
     {
         try{
-            core.chooseFigure(x,y);
+            core.chooseMyFigure(x,y);
         }
         catch(OutOfBoardException& e){
             cout << e.what() << endl;
@@ -251,7 +251,7 @@ void Game::startGame()
             if (BadInput == 0)
             {
                 try{
-                    core.moveFigure(x2,y2);
+                    core.moveMyFigure(x2,y2);
                 }
                 catch(OutOfBoardException& e){
                     cout << e.what() << endl;

@@ -1,76 +1,76 @@
-#include "board.h"
+#include "boardLogic.h"
 
 //Слишком длинный метод.
 //TODO разбить на более маленькие методы.
-Board::Board()
+BoardLogic::BoardLogic()
 {
     int i,j;
     bool color = 0;
-    Cell pos(0,0);
+    myCell pos(0,0);
 
-    pos.setX(0);
-    pos.setY(0);
+    pos.setXval(0);
+    pos.setYval(0);
     pFigures[0][0] = new Rook(color,pos);
 
-    pos.setX(1);
+    pos.setXval(1);
     pFigures[1][0] = new Knight(color,pos);
 
-    pos.setX(2);
+    pos.setXval(2);
     pFigures[2][0] = new Bishop(color,pos);
 
-    pos.setX(3);
+    pos.setXval(3);
     pFigures[3][0] = new Queen(color,pos);
 
-    pos.setX(4);
+    pos.setXval(4);
     pFigures[4][0] = new King(color,pos);
 
-    pos.setX(7);
+    pos.setXval(7);
     pFigures[7][0] = new Rook(color,pos);
 
-    pos.setX(6);
+    pos.setXval(6);
     pFigures[6][0] =  new Knight(color,pos);
 
-    pos.setX(5);
+    pos.setXval(5);
     pFigures[5][0] = new Bishop(color,pos);
 
     for (i=0; i<8; i++)
     {
-        pos.setY(1);
-        pos.setX(i);
+        pos.setYval(1);
+        pos.setXval(i);
         pFigures[i][1] = new Pawn(color,pos);
     }
 
 
     color = 1;
-    pos.setX(0);
-    pos.setY(7);
+    pos.setXval(0);
+    pos.setYval(7);
     pFigures[0][7] = new Rook(color,pos);
 
-    pos.setX(1);
+    pos.setXval(1);
     pFigures[1][7] = new Knight(color,pos);
 
-    pos.setX(2);
+    pos.setXval(2);
     pFigures[2][7] = new Bishop(color,pos);
 
-    pos.setX(3);
+    pos.setXval(3);
     pFigures[3][7] = new King(color,pos);
 
-    pos.setX(4);
+    pos.setXval(4);
     pFigures[4][7] = new Queen(color,pos);
 
-    pos.setX(7);
+    pos.setXval(7);
     pFigures[7][7] = new Rook(color,pos);
 
-    pos.setX(6);
+    pos.setXval(6);
     pFigures[6][7] =  new Knight(color,pos);
 
-    pos.setX(5);
+    pos.setXval(5);
     pFigures[5][7] = new Bishop(color,pos);
 
     for (i=0; i<8; i++)
     {
-        pos.setY(6);
-        pos.setX(i);
+        pos.setYval(6);
+        pos.setXval(i);
         pFigures[i][6] = new Pawn(color,pos);
     }
 
@@ -86,26 +86,26 @@ Board::Board()
     SelectedFigure = nullptr;
 }
 
-void Board::selectFigure(Cell *cell)
+void BoardLogic::selectMyFigure(myCell *cell)
 {
     int x,y;
-    x = cell->getX();
-    y = cell->getY();
-    Cell pos(x,y);
+    x = cell->getXval();
+    y = cell->getYval();
+    myCell pos(x,y);
     SelectedFigure = pFigures[x][y];
-    SelectedFigure->setPosition(pos);
+    SelectedFigure->setFigPosition(pos);
 }
 
-void Board::changePosition(Cell* pos)
+void BoardLogic::changeMyFigPosition(myCell* pos)
 {
     int x0,y0,x,y;
-    Cell* selected_figure_position = SelectedFigure->getPosition();
-    x0 = selected_figure_position->getX();
-    y0 = selected_figure_position->getY();
-    x = pos->getX();
-    y = pos->getY();
-    Cell cell(x,y);
-    pFigures[x0][y0]->setPosition(cell);
+    myCell* selected_figure_position = SelectedFigure->getFigPosition();
+    x0 = selected_figure_position->getXval();
+    y0 = selected_figure_position->getYval();
+    x = pos->getXval();
+    y = pos->getYval();
+    myCell cell(x,y);
+    pFigures[x0][y0]->setFigPosition(cell);
     pFigures[x][y] = SelectedFigure;
     //Когда выделяешь память из кучи с помощью new, а потом присваиваешь nullptr, не освободив занятую память с помощью delete
     //, то случается, что ее уже нельзя освободить. утечка.
@@ -116,15 +116,15 @@ void Board::changePosition(Cell* pos)
 
 }
 
-Figure* Board::getFigure(Cell *pos)
+myFigure* BoardLogic::getMyFigure(myCell *pos)
 {
     int x,y;
-    x = pos->getX();
-    y = pos->getY();
+    x = pos->getXval();
+    y = pos->getYval();
     return pFigures[x][y];
 }
 
-bool Board::isFigureSelected()
+bool BoardLogic::isMyFigureSelected()
 {
     if (SelectedFigure == nullptr)
         return 0;
@@ -137,31 +137,31 @@ bool Board::isFigureSelected()
     //return SelectedFigure != nullptr;
 }
 
-void Board::addFigure(Figure *fig)
+/*void BoardLogic::addMyFigure(myFigure *fig)
 {
     int x,y;
-    x = (fig->getPosition())->getX();
-    y = (fig->getPosition())->getY();
+    x = (fig->getFigPosition())->getXval();
+    y = (fig->getFigPosition())->getYval();
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException();
     else
         pFigures[x][y] = fig;
 }
 
-void Board::removeFigure(Cell *pos)
+void BoardLogic::removeMyFigure(myCell *pos)
 {
     int x,y;
-    x = pos->getX();
-    y = pos->getY();
+    x = pos->getXval();
+    y = pos->getYval();
     if ( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException();
     else
         //Тут возможна утечка, т.к без delete.
         pFigures[x][y] = nullptr;
 
-}
+}*/
 
-Figure* Board::getSelectedFigure()
+myFigure* BoardLogic::getSelectedFigure()
 {
     return SelectedFigure;
 }
@@ -175,34 +175,34 @@ Figure* Board::getSelectedFigure()
 
 
 //TODO заменить 1 и 0 на true и false
-bool Board::CheckPossibleMoves(Cell *pos)
+bool BoardLogic::checkPossibleMoves(myCell *pos)
 {
     bool color;
     int x,y,x0,y0;
     int count = 0;
-    x0 = (SelectedFigure->getPosition())->getX();
-    y0 = (SelectedFigure->getPosition())->getY();
-    x = pos->getX();
-    y = pos->getY();
+    x0 = (SelectedFigure->getFigPosition())->getXval();
+    y0 = (SelectedFigure->getFigPosition())->getYval();
+    x = pos->getXval();
+    y = pos->getYval();
 
 
     Pawn* pPawn = dynamic_cast<Pawn*>(SelectedFigure);
     if (pPawn)
     {
 
-        color = SelectedFigure->getColor();
-        if((x==x0) && (y==y0+1) && (getFigure(pos) == nullptr) && (color == 0))
+        color = SelectedFigure->getFigColor();
+        if((x==x0) && (y==y0+1) && (getMyFigure(pos) == nullptr) && (color == 0))
             return 1;
 
-        if((x==x0) && (y==y0-1) && (getFigure(pos) == nullptr) && (color == 1))
+        if((x==x0) && (y==y0-1) && (getMyFigure(pos) == nullptr) && (color == 1))
             return 1;
 
-        if( (x == x0+1) && (y == y0+1) && (getFigure(pos) != nullptr) )
-            if( (getFigure(pos)->getColor()) != color)
+        if( (x == x0+1) && (y == y0+1) && (getMyFigure(pos) != nullptr) )
+            if( (getMyFigure(pos)->getFigColor()) != color)
                 return 1;
 
-        if( (x == x0-1) && (y == y0+1) && (getFigure(pos) != nullptr) )
-            if( (getFigure(pos)->getColor()) != color)
+        if( (x == x0-1) && (y == y0+1) && (getMyFigure(pos) != nullptr) )
+            if( (getMyFigure(pos)->getFigColor()) != color)
                 return 1;
 
         return 0;
@@ -356,7 +356,7 @@ bool Board::CheckPossibleMoves(Cell *pos)
 
 //Когда добавишь delete в классы выше, для избежания утечек, здесь придется проверять была ли уже освобождена память,
 //чтобы не освободить ее 2 раза. А это очень плохо, сам знаешь.
-Board::~Board()
+BoardLogic::~BoardLogic()
 {
     int i,j;
     for(i=0;i<8;i++){

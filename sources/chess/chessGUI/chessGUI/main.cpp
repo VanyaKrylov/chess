@@ -1,4 +1,3 @@
-#include "startMenu.h"
 #include "mainwindow.h"
 #include <QApplication>
 #include <QStackedWidget>

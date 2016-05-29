@@ -1,7 +1,7 @@
+#pragma once
 #ifndef FIGURE_H
 #define FIGURE_H
-#include <vector>
-#include "cell.h"
+#include "mycell.h"
 
 
 //Как я поянл, реализация всех методов классов, унаследованных от Figure, совпадает на 100%.
@@ -11,7 +11,7 @@
 /**
  * @brief The Figure class - abstract class for figures
  */
-class Figure
+class myFigure
 {
 public:
 
@@ -21,7 +21,7 @@ public:
      */
     
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual bool getColor() const = 0;
+    virtual bool getFigColor() const = 0;
 
     /**
      * @brief setColor - sets the color of the current figure
@@ -29,7 +29,7 @@ public:
      */
     
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual void setColor(const bool color) = 0;
+    virtual void setFigColor(const bool color) = 0;
 
     //virtual Figure* operator = (Figure* fig) = 0;
 
@@ -40,7 +40,7 @@ public:
     
     //TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual Cell* getPosition() = 0;
+    virtual myCell* getFigPosition() = 0;
 
     /**
      * @brief setPosition - sets position of the current figure
@@ -48,14 +48,14 @@ public:
      */
     
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual void setPosition(const Cell &cell)=0;
+    virtual void setFigPosition(const myCell &cell)=0;
 
     /**
      * @brief ~Figure - destructor
      */
     
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual ~Figure(){}
+    virtual ~myFigure(){}
 
 };
 
@@ -67,30 +67,30 @@ public:
 //От всех классов ниже ты ведь не наследуешься. Поэтому не нужно деструктор объявлять даже невиртуальный. Он и так сам сгенерируется.
 
 
-class Pawn: public Figure
+class Pawn: public myFigure
 {
 public:
 
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    Pawn(bool color, Cell& pos) : Color(color), Pos(pos) {}
+    Pawn(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Pawn(){}
     
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
     //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу Figure
-    void setColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color) { this->Color=color; }
     
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
     //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception
-    bool getColor() const { return Color; }
+    bool getFigColor() const { return Color; }
     
     //TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
     //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception
-    Cell* getPosition() { return &Pos; }
+    myCell* getFigPosition() { return &Pos; }
     
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
     //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу Figure
-    void setPosition(const Cell &cell);
+    void setFigPosition(const myCell &cell);
     
     //Кусок кода закомментированный. TODO убрать или допилить
     //Figure* operator =(Figure* fig){
@@ -101,117 +101,117 @@ private:
     //насколько мне известно, неконстантные объекты любого класса принято называть с маленькой буквы
     //TODO  подумать над стилем
     bool Color;
-    Cell Pos;
+    myCell Pos;
 };
 
 //Все замечания к предыдущим классам относятся и к тем, что ниже.
 //TODO const noexcept override bool->enum
 
-class Knight: public Figure
+class Knight: public myFigure
 {
 public:
-    Knight(bool color, Cell& pos) : Color(color), Pos(pos) {}
+    Knight(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Knight(){}
 
-    void setColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color) { this->Color=color; }
 
-    bool getColor() const { return Color; }
+    bool getFigColor() const { return Color; }
 
-    Cell* getPosition() { return &Pos; }
+    myCell* getFigPosition() { return &Pos; }
 
-    void setPosition(const Cell &cell);
+    void setFigPosition(const myCell &cell);
 
 
 private:
     bool Color;
-    Cell Pos;
+    myCell Pos;
 };
 
 
 
-class Bishop: public Figure
+class Bishop: public myFigure
 {
 public:
-    Bishop(bool color, Cell& pos) : Color(color), Pos(pos) {}
+    Bishop(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Bishop(){}
 
-    void setColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color) { this->Color=color; }
 
-    bool getColor() const { return Color; }
+    bool getFigColor() const { return Color; }
 
-    Cell* getPosition() { return &Pos; }
+    myCell* getFigPosition() { return &Pos; }
 
-    void setPosition(const Cell &cell);
+    void setFigPosition(const myCell &cell);
 
 
 private:
     bool Color;
-    Cell Pos;
+    myCell Pos;
 };
 
 
 
-class Rook: public Figure
+class Rook: public myFigure
 {
 public:
-    Rook(bool color, Cell& pos) : Color(color), Pos(pos) {}
+    Rook(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Rook(){}
 
-    void setColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color) { this->Color=color; }
 
-    bool getColor() const { return Color; }
+    bool getFigColor() const { return Color; }
 
-    Cell* getPosition() { return &Pos; }
+    myCell* getFigPosition() { return &Pos; }
 
-    void setPosition(const Cell &cell);
+    void setFigPosition(const myCell &cell);
 
 
 private:
     bool Color;
-    Cell Pos;
+    myCell Pos;
 };
 
 
 
-class King: public Figure
+class King: public myFigure
 {
 public:
-    King(bool color, Cell& pos) : Color(color), Pos(pos) {}
+    King(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~King(){}
 
-    void setColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color) { this->Color=color; }
 
-    bool getColor() const { return Color; }
+    bool getFigColor() const { return Color; }
 
-    Cell* getPosition() { return &Pos; }
+    myCell* getFigPosition() { return &Pos; }
 
-    void setPosition(const Cell &cell);
+    void setFigPosition(const myCell &cell);
 
 
 private:
     bool Color;
-    Cell Pos;
+    myCell Pos;
 };
 
 
 
-class Queen: public Figure
+class Queen: public myFigure
 {
 public:
-    Queen(bool color, Cell& pos) : Color(color), Pos(pos) {}
+    Queen(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Queen(){}
 
-    void setColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color) { this->Color=color; }
 
-    bool getColor() const { return Color; }
+    bool getFigColor() const { return Color; }
 
-    Cell* getPosition() { return &Pos; }
+    myCell* getFigPosition() { return &Pos; }
 
-    void setPosition(const Cell &cell);
+    void setFigPosition(const myCell &cell);
 
 
 private:
     bool Color;
-    Cell Pos;
+    myCell Pos;
 };
 #endif // FIGURE_H

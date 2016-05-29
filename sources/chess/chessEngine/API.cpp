@@ -6,49 +6,54 @@ ChessEngine::ChessEngine()
 
 }
 
-void ChessEngine::chooseFigure(int x, int y)
+void ChessEngine::chooseMyFigure(int x, int y)
 {
     if( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException();
-    Cell pos(x,y);
-    if((board.getFigure(&pos)) == nullptr)
+    myCell pos(x,y);
+    if((chessBoard.getMyFigure(&pos)) == nullptr)
         throw EmptyCellException();
     else{
-        board.selectFigure(&pos);
+        chessBoard.selectMyFigure(&pos);
     }
 }
 
-void ChessEngine::moveFigure(int x,int y)
+void ChessEngine::moveMyFigure(int x,int y)
 {
     if( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException();
     else{
-        Cell pos(x,y);
-        Figure* fig = board.getFigure(&pos);
+        myCell pos(x,y);
+        myFigure* fig = chessBoard.getMyFigure(&pos);
         if(fig!=nullptr)
         {
-            if(((board.getSelectedFigure())->getColor()) == (fig->getColor()))
+            if(((chessBoard.getSelectedFigure())->getFigColor()) == (fig->getFigColor()))
                 throw SameColorFigureException();
-            if(board.CheckPossibleMoves(&pos) == 0)
+            if(chessBoard.checkPossibleMoves(&pos) == 0)
                 throw AgainstTheRulesException();
             else{
-                board.changePosition(&pos);
+                chessBoard.changeMyFigPosition(&pos);
             }
         }
         else{
-            if(board.CheckPossibleMoves(&pos) == 0)
+            if(chessBoard.checkPossibleMoves(&pos) == 0)
                 throw AgainstTheRulesException();
-            board.changePosition(&pos);
+            chessBoard.changeMyFigPosition(&pos);
         }
     }
 }
 
-Figure* ChessEngine::getFigure(int x, int y)
+myFigure* ChessEngine::getMyFigure(int x, int y)
 {
     if( (x>7) || (y>7) || (x<0) || (y<0) )
         throw OutOfBoardException();
     else{
-        Cell pos(x,y);
-        return board.getFigure(&pos);
+        myCell pos(x,y);
+        return chessBoard.getMyFigure(&pos);
     }
+}
+
+bool ChessEngine::isFigureSelected()
+{
+    return chessBoard.isMyFigureSelected();
 }

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BOARD_H
 #define BOARD_H
 #include"figures.h"
@@ -9,11 +10,11 @@
 //TODO везде, где надо, добавить const, noexcept.
 //Определиться с *T и * T
 
-class Board
+class BoardLogic
 {
 public:
-    Board();
-    ~Board();
+    BoardLogic();
+    ~BoardLogic();
 
     /**
      * @brief addFigure - adding a figure to the board
@@ -21,7 +22,7 @@ public:
      */
     
     //* fig 
-    void addFigure(Figure* fig);
+    void addMyFigure(myFigure* fig);
 
     /**
      * @brief removeFigure - replaces figure from the current place on the board with a nullptr
@@ -29,25 +30,25 @@ public:
      */
     
     //*pos - везде по-разному
-    void removeFigure(Cell *pos);
+    void removeMyFigure(myCell *pos);
 
     /**
      * @brief selectFigure - select a figure, changes the selectedFigure value
      * @param cell
      */
-    void selectFigure(Cell *cell);
+    void selectMyFigure(myCell *cell);
 
     /**
      * @brief changePosition - moves the selectedFigure to pos2
      * @param pos2 - reference to Cell object, contains the position
      */
-    void changePosition(Cell *pos);
+    void changeMyFigPosition(myCell *pos);
 
     /**
      * @brief isFigureSelected - checks whether there is any Figure selected
      * @return bool value, TRUE - selected, FALSE - not selected
      */
-    bool isFigureSelected();
+    bool isMyFigureSelected();
 
 
     //TODO додокументировать x и y
@@ -57,27 +58,27 @@ public:
      * @param y
      * @return pointer to Figure object
      */
-    Figure* getFigure(Cell* pos);
+    myFigure* getMyFigure(myCell* pos);
 
     /**
      * @brief getSelectedFigure - returns the selected figure
     //лучше без returns.
      * @return returns pointer to the SelectedFigure
      */
-    Figure* getSelectedFigure();
+    myFigure* getSelectedFigure();
 
     /**
      * @brief CheckPossibleMoves - game logic rules
      * @param pos - pointer to Cell object, position where the figure is supposed to be moves
      * @return TRUE if the rules are not broken, False otherwise
      */
-    bool CheckPossibleMoves(Cell* pos);
+    bool checkPossibleMoves(myCell* pos);
 
 private:
-    Figure* pFigures[8][8];
+    myFigure* pFigures[8][8];
     
     //с маленькой буквы - неконстантные объекты. с большой - классы
-    Figure* SelectedFigure;
+    myFigure* SelectedFigure;
 
 };
 

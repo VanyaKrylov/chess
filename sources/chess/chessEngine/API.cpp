@@ -3,8 +3,9 @@
 //TODO убрать. Такой и сам сгенерируется компилятором
 ChessEngine::ChessEngine()
 {
-
 }
+
+
 
 void ChessEngine::chooseMyFigure(int x, int y)
 {
@@ -39,6 +40,7 @@ void ChessEngine::moveMyFigure(int x,int y)
             if(chessBoard.checkPossibleMoves(&pos) == 0)
                 throw AgainstTheRulesException();
             chessBoard.changeMyFigPosition(&pos);
+
         }
     }
 }

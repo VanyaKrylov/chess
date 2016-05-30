@@ -3,6 +3,7 @@
 #define BOARDLOGIC_H
 
 #include"figures.h"
+#include "exceptions.h"
 
 
 //TODO в c++ используется cmath
@@ -76,11 +77,14 @@ public:
      */
     bool checkPossibleMoves(myCell* pos);
 
+    void changePreviousColor();
+
 private:
     myFigure* pFigures[8][8];
     
     //с маленькой буквы - неконстантные объекты. с большой - классы
     myFigure* selectedFigure;
+    bool previousFigColor;
 
 };
 

@@ -77,5 +77,11 @@ public:
     const char * what() {return "Denominator can't be 0";}
 };
 
+class WrongColorMoveException : std::exception
+{
+public:
+    const char * what() {return "It is another's color turn to make a move";}
+};
+
 #endif // EXCEPTIONS
 

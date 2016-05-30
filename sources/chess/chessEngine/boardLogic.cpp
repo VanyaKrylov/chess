@@ -84,6 +84,16 @@ BoardLogic::BoardLogic()
     
     //лучше инициализировать переменную все же. через список инициализации
     selectedFigure = nullptr;
+
+    previousFigColor = 0;
+}
+
+void BoardLogic::changePreviousColor()
+{
+    if (previousFigColor == 0)
+        previousFigColor = 1;
+    else
+        previousFigColor = 0;
 }
 
 void BoardLogic::selectMyFigure(myCell *cell)
@@ -91,9 +101,12 @@ void BoardLogic::selectMyFigure(myCell *cell)
     int x,y;
     x = cell->getXval();
     y = cell->getYval();
+    if(pFigures[x][y]->getFigColor() == previousFigColor)
+        throw WrongColorMoveException();
     myCell pos(x,y);
     selectedFigure = pFigures[x][y];
     selectedFigure->setFigPosition(pos);
+    changePreviousColor();
 }
 
 void BoardLogic::changeMyFigPosition(myCell* pos)

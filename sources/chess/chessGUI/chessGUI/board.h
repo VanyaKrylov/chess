@@ -5,7 +5,7 @@
 #include <QWidget>
 #include <QtWidgets>
 #include "API.h"
-
+#include "QApplication"
 
 //#include "exceptions.h"
 
@@ -13,7 +13,7 @@
 
 namespace Ui {
 class Board;
-class ChessEngine;
+
 }
 
 class Board : public QWidget
@@ -26,17 +26,18 @@ public:
     //int getYposCursor(QMouseEvent *pe);
 
 
-    //void select(QMouseEvent *pe);
-    //void moveFig(QMouseEvent *pe);
+    void select(QMouseEvent *pe);
+    void moveFig(QMouseEvent *pe);
     ~Board();
 
 protected:
-    //virtual void mousePressEvent(QMouseEvent *pe);
+    virtual void mousePressEvent(QMouseEvent *pe);
 
 private:
     Ui::Board *ui;
-    //QMouseEvent *pe;
-    ChessEngine *engine;
+    QLabel * label;
+    QMouseEvent *pe;
+    ChessEngine engine;
 };
 
 #endif // BOARD_H

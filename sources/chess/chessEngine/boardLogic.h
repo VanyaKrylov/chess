@@ -1,7 +1,9 @@
 #pragma once
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef BOARDLOGIC_H
+#define BOARDLOGIC_H
+
 #include"figures.h"
+
 
 //TODO в c++ используется cmath
 #include <math.h>
@@ -78,8 +80,8 @@ private:
     myFigure* pFigures[8][8];
     
     //с маленькой буквы - неконстантные объекты. с большой - классы
-    myFigure* SelectedFigure;
+    myFigure* selectedFigure;
 
 };
 
-#endif // BOARD_H
+#endif // BOARDLOGIC_H

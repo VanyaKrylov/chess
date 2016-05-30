@@ -1,6 +1,6 @@
 #pragma once
-#ifndef CELL_H
-#define CELL_H
+#ifndef MYCELL_H
+#define MYCELL_H
 
 //Не нашел исключений в этом классе.
 //TODO убрать лишний хэдер
@@ -40,4 +40,4 @@ private:
 
 };
 
-#endif // CELL_H
+#endif // MYCELL_H

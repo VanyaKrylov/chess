@@ -21,7 +21,7 @@ Board::Board(QWidget *parent) :
 
 
 
-/*void Board::mousePressEvent(QMouseEvent *pe)
+void Board::mousePressEvent(QMouseEvent *pe)
 {
     if(engine.isFigureSelected() == 0)
         select(pe);
@@ -34,7 +34,7 @@ Board::Board(QWidget *parent) :
 void Board::select(QMouseEvent *pe)
 {
     try{
-        engine->chooseMyFigure(pe->x()/100,pe->y()/100);
+        engine.chooseMyFigure(pe->x()/100,pe->y()/100);
     }
     catch(OutOfBoardException &e){
         QMessageBox *mb = new QMessageBox(QMessageBox::Warning,"Message",e.what());
@@ -46,32 +46,47 @@ void Board::select(QMouseEvent *pe)
         mb->exec();
         delete mb;
     }
+
+    if(label = dynamic_cast<QLabel *>(qApp->widgetAt(pe->globalPos())))
+            label->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
 }
 
 
 
 void Board::moveFig(QMouseEvent *pe)
 {
+    bool warning = 0;
     try{
-        engine->moveMyFigure(pe->x()/100,pe->y()/100);
+        engine.moveMyFigure(pe->x()/100,pe->y()/100);
     }
     catch(OutOfBoardException &e){
         QMessageBox *mb = new QMessageBox(QMessageBox::Warning,"Message",e.what());
         mb->exec();
         delete mb;
+        warning = 1;
     }
     catch(AgainstTheRulesException &e){
         QMessageBox *mb = new QMessageBox(QMessageBox::Warning,"Message",e.what());
         mb->exec();
         delete mb;
+        warning = 1;
     }
     catch(SameColorFigureException &e){
         QMessageBox *mb = new QMessageBox(QMessageBox::Warning,"Message",e.what());
         mb->exec();
         delete mb;
+        warning = 1;
     }
+    if(warning == 0){
+        if(QLabel *lbl = dynamic_cast<QLabel *>(qApp->widgetAt(pe->globalPos())))
+            lbl->hide();
+        label->move((pe->x()/100)*100, (pe->y()/100)*100);
+        label->setFrameStyle(QFrame::Panel | QFrame::Plain);
+    }
+
 }
-*/
+
 
 
 

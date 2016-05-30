@@ -1,6 +1,6 @@
 #pragma once
-#ifndef FIGURE_H
-#define FIGURE_H
+#ifndef FIGURES_H
+#define FIGURES_H
 #include "mycell.h"
 
 
@@ -214,4 +214,4 @@ private:
     bool Color;
     myCell Pos;
 };
-#endif // FIGURE_H
+#endif // FIGURES_H

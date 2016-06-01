@@ -232,6 +232,15 @@ bool BoardLogic::checkPossibleMoves(myCell *pos)
             if( (getMyFigure(pos)->getFigColor()) != color)
                 return 1;
 
+        if((y0==6) | (y0==1))
+        {
+            if((x==x0) && (y==y0+2) && (getMyFigure(pos) == nullptr) && (color == 0))
+                return 1;
+
+            if((x==x0) && (y==y0-2) && (getMyFigure(pos) == nullptr) && (color == 1))
+                return 1;
+        }
+
         return 0;
     }
 

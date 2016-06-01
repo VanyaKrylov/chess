@@ -86,7 +86,7 @@ public:
 class KingKilledException : std::exception
 {
 public:
-    const char * what() {return "King Killed. Game over";}
+    const char * what() {return "King killed. Game over";}
 };
 
 #endif // EXCEPTIONS

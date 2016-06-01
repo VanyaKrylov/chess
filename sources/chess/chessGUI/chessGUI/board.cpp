@@ -97,7 +97,6 @@ void Board::moveFig(QMouseEvent *pe)
         QMessageBox *mb = new QMessageBox(QMessageBox::Warning,"Message",e.what());
         mb->exec();
         delete mb;
-        //this->close();
         emit gameIsOver();
     }
 

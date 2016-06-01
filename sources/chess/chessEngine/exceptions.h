@@ -83,5 +83,11 @@ public:
     const char * what() {return "It is another's color turn to make a move";}
 };
 
+class KingKilledException : std::exception
+{
+public:
+    const char * what() {return "King Killed. Game over";}
+};
+
 #endif // EXCEPTIONS
 

@@ -33,6 +33,9 @@ public:
 protected:
     virtual void mousePressEvent(QMouseEvent *pe);
 
+signals:
+    void gameIsOver();
+
 private:
     Ui::Board *ui;
     QLabel * label;

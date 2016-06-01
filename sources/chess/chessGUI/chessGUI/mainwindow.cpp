@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     setCentralWidget(stack);
     connect(startMenu,SIGNAL(rejected()),SLOT(close()));
     connect(startMenu,SIGNAL(accepted()),SLOT(startButtonPressed()));
+    connect(b,SIGNAL(gameIsOver()),SLOT(close()));
     close();
 
 }

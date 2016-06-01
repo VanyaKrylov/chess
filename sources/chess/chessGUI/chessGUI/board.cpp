@@ -89,6 +89,18 @@ void Board::moveFig(QMouseEvent *pe)
         delete mb;
         warning = 1;
     }
+    catch(KingKilledException &e){
+        if(QLabel *lbl = dynamic_cast<QLabel *>(qApp->widgetAt(pe->globalPos())))
+            lbl->hide();
+        label->move((pe->x()/100)*100, (pe->y()/100)*100);
+        label->setFrameStyle(QFrame::Panel | QFrame::Plain);
+        QMessageBox *mb = new QMessageBox(QMessageBox::Warning,"Message",e.what());
+        mb->exec();
+        delete mb;
+        //this->close();
+        emit gameIsOver();
+    }
+
     if(warning == 0){
         if(QLabel *lbl = dynamic_cast<QLabel *>(qApp->widgetAt(pe->globalPos())))
             lbl->hide();

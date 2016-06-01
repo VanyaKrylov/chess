@@ -118,6 +118,7 @@ void BoardLogic::changeMyFigPosition(myCell* pos)
     x = pos->getXval();
     y = pos->getYval();
     myCell cell(x,y);
+    myFigure *checkIfKing = pFigures[x][y];
     pFigures[x0][y0]->setFigPosition(cell);
     pFigures[x][y] = selectedFigure;
     //Когда выделяешь память из кучи с помощью new, а потом присваиваешь nullptr, не освободив занятую память с помощью delete
@@ -126,6 +127,11 @@ void BoardLogic::changeMyFigPosition(myCell* pos)
     //TODO пофиксить утечку
     pFigures[x0][y0] = nullptr;
     selectedFigure = nullptr;
+    King* pKing = dynamic_cast<King*>(checkIfKing);
+    if (pKing)
+    {
+        throw KingKilledException();
+    }
 
 }
 

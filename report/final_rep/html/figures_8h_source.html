@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>chess: Исходный файл figures.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">chess
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Функции</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">figures.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef FIGURES_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define FIGURES_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;mycell.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//Как я поянл, реализация всех методов классов, унаследованных от Figure, совпадает на 100%.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//TODO не нужно дублировать код. Нужно эту общую реализацию вынести в отдельный класс.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//Написал про это еще в cpp.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classmyFigure.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmyFigure.html">myFigure</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classmyFigure.html#adf2dd5aaff7e00cae0c10507736e4786">getFigColor</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmyFigure.html#a7d09f9c8ea910b7f8007ecd9dd9626a9">setFigColor</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> color) = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//virtual Figure* operator = (Figure* fig) = 0;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classmyCell.html">myCell</a>* <a class="code" href="classmyFigure.html#a6564823393ae97e821ecc12e9cc6ca35">getFigPosition</a>() = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmyFigure.html#ac015e4034d9364c2936b4a6c40afb3aa">setFigPosition</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a> &amp;cell)=0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classmyFigure.html#ab493f940feba7a7ae78cd87233aed817">   58</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classmyFigure.html#ab493f940feba7a7ae78cd87233aed817">~myFigure</a>(){}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//У Мейерса объяснено более подробно, почему так надо сделать.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//От всех классов ниже ты ведь не наследуешься. Поэтому не нужно деструктор объявлять даже невиртуальный. Он и так сам сгенерируется.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classPawn.html">   70</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPawn.html">Pawn</a>: <span class="keyword">public</span> <a class="code" href="classmyFigure.html">myFigure</a></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classPawn.html">Pawn</a>(<span class="keywordtype">bool</span> color, <a class="code" href="classmyCell.html">myCell</a>&amp; pos) : Color(color), Pos(pos) {}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ~<a class="code" href="classPawn.html">Pawn</a>(){}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу Figure</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classPawn.html#a089522fb1c1950410313f1bef3d6fa06">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPawn.html#a089522fb1c1950410313f1bef3d6fa06">setFigColor</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> color) { this-&gt;Color=color; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classPawn.html#a0aabc4f4929d1c49ce30d0ff937e174a">   84</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPawn.html#a0aabc4f4929d1c49ce30d0ff937e174a">getFigColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Color; }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">//TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classPawn.html#a0cfaa8bd3c59a92244f2aa674e337fd5">   89</a></span>&#160;    <a class="code" href="classmyCell.html">myCell</a>* <a class="code" href="classPawn.html#a0cfaa8bd3c59a92244f2aa674e337fd5">getFigPosition</a>() { <span class="keywordflow">return</span> &amp;Pos; }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">//TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу Figure</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPawn.html#a22b0a387986d99fbb4954f671dd70ab1">setFigPosition</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a> &amp;cell);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//Кусок кода закомментированный. TODO убрать или допилить</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//Figure* operator =(Figure* fig){</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">//Мне кажется диким - использовать тип bool для цвета.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//TODO сделать enum</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">//насколько мне известно, неконстантные объекты любого класса принято называть с маленькой буквы</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">//TODO  подумать над стилем</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">bool</span> Color;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="classmyCell.html">myCell</a> Pos;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">//Все замечания к предыдущим классам относятся и к тем, что ниже.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//TODO const noexcept override bool-&gt;enum</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classKnight.html">  110</a></span>&#160;<span class="keyword">class </span><a class="code" href="classKnight.html">Knight</a>: <span class="keyword">public</span> <a class="code" href="classmyFigure.html">myFigure</a></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classKnight.html">Knight</a>(<span class="keywordtype">bool</span> color, <a class="code" href="classmyCell.html">myCell</a>&amp; pos) : Color(color), Pos(pos) {}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ~<a class="code" href="classKnight.html">Knight</a>(){}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classKnight.html#ae89ed67b78c4af54695ea0d7c995f223">  116</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classKnight.html#ae89ed67b78c4af54695ea0d7c995f223">setFigColor</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> color) { this-&gt;Color=color; }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classKnight.html#ac51f10012ab2b2eeff188f50166f91e2">  118</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classKnight.html#ac51f10012ab2b2eeff188f50166f91e2">getFigColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Color; }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classKnight.html#ae4e0c99a0a07effe4eee528dee0a93ab">  120</a></span>&#160;    <a class="code" href="classmyCell.html">myCell</a>* <a class="code" href="classKnight.html#ae4e0c99a0a07effe4eee528dee0a93ab">getFigPosition</a>() { <span class="keywordflow">return</span> &amp;Pos; }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classKnight.html#ac838f1581e4d7b230209e59a60ef11a2">setFigPosition</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a> &amp;cell);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">bool</span> Color;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classmyCell.html">myCell</a> Pos;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classBishop.html">  132</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBishop.html">Bishop</a>: <span class="keyword">public</span> <a class="code" href="classmyFigure.html">myFigure</a></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="classBishop.html">Bishop</a>(<span class="keywordtype">bool</span> color, <a class="code" href="classmyCell.html">myCell</a>&amp; pos) : Color(color), Pos(pos) {}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    ~<a class="code" href="classBishop.html">Bishop</a>(){}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classBishop.html#a859e1ddeaf20ad44621efa8e7015f472">  138</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBishop.html#a859e1ddeaf20ad44621efa8e7015f472">setFigColor</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> color) { this-&gt;Color=color; }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classBishop.html#a9476c797de0de5b7d064c8d7f728aa09">  140</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classBishop.html#a9476c797de0de5b7d064c8d7f728aa09">getFigColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Color; }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classBishop.html#af89c108addcdb762752942c614b565ef">  142</a></span>&#160;    <a class="code" href="classmyCell.html">myCell</a>* <a class="code" href="classBishop.html#af89c108addcdb762752942c614b565ef">getFigPosition</a>() { <span class="keywordflow">return</span> &amp;Pos; }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBishop.html#a5b0779aa7252e01645a5e5a0214c26cd">setFigPosition</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a> &amp;cell);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">bool</span> Color;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="classmyCell.html">myCell</a> Pos;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;};</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classRook.html">  154</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRook.html">Rook</a>: <span class="keyword">public</span> <a class="code" href="classmyFigure.html">myFigure</a></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="classRook.html">Rook</a>(<span class="keywordtype">bool</span> color, <a class="code" href="classmyCell.html">myCell</a>&amp; pos) : Color(color), Pos(pos) {}</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    ~<a class="code" href="classRook.html">Rook</a>(){}</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classRook.html#ac0edfc2179e01c5832355a2679ee63bd">  160</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRook.html#ac0edfc2179e01c5832355a2679ee63bd">setFigColor</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> color) { this-&gt;Color=color; }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classRook.html#afa12ce56bc0cf0dfc5d20d2a40cd71c6">  162</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classRook.html#afa12ce56bc0cf0dfc5d20d2a40cd71c6">getFigColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Color; }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classRook.html#a6254ea9761858887e2e4b26d945099f8">  164</a></span>&#160;    <a class="code" href="classmyCell.html">myCell</a>* <a class="code" href="classRook.html#a6254ea9761858887e2e4b26d945099f8">getFigPosition</a>() { <span class="keywordflow">return</span> &amp;Pos; }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRook.html#ac34e4615c4964fd19143333f42175eab">setFigPosition</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a> &amp;cell);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">bool</span> Color;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classmyCell.html">myCell</a> Pos;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;};</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classKing.html">  176</a></span>&#160;<span class="keyword">class </span><a class="code" href="classKing.html">King</a>: <span class="keyword">public</span> <a class="code" href="classmyFigure.html">myFigure</a></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classKing.html">King</a>(<span class="keywordtype">bool</span> color, <a class="code" href="classmyCell.html">myCell</a>&amp; pos) : Color(color), Pos(pos) {}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    ~<a class="code" href="classKing.html">King</a>(){}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classKing.html#aa962d18712bc0621f9545d8fc667e340">  182</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classKing.html#aa962d18712bc0621f9545d8fc667e340">setFigColor</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> color) { this-&gt;Color=color; }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classKing.html#a877ca4052d4fceceba52bfd87ca7deec">  184</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classKing.html#a877ca4052d4fceceba52bfd87ca7deec">getFigColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Color; }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classKing.html#a0a5cf057a4fdb7cf48b4372c07549b4c">  186</a></span>&#160;    <a class="code" href="classmyCell.html">myCell</a>* <a class="code" href="classKing.html#a0a5cf057a4fdb7cf48b4372c07549b4c">getFigPosition</a>() { <span class="keywordflow">return</span> &amp;Pos; }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classKing.html#a95fa16fe64eada7b4666d687f9d46289">setFigPosition</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a> &amp;cell);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">bool</span> Color;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="classmyCell.html">myCell</a> Pos;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;};</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="classQueen.html">  198</a></span>&#160;<span class="keyword">class </span><a class="code" href="classQueen.html">Queen</a>: <span class="keyword">public</span> <a class="code" href="classmyFigure.html">myFigure</a></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="classQueen.html">Queen</a>(<span class="keywordtype">bool</span> color, <a class="code" href="classmyCell.html">myCell</a>&amp; pos) : Color(color), Pos(pos) {}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    ~<a class="code" href="classQueen.html">Queen</a>(){}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="classQueen.html#afb9d66c27bba36c63df4b79b7c07510e">  204</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classQueen.html#afb9d66c27bba36c63df4b79b7c07510e">setFigColor</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> color) { this-&gt;Color=color; }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classQueen.html#a8e061f7ef822c726217f887f04d6f5b7">  206</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classQueen.html#a8e061f7ef822c726217f887f04d6f5b7">getFigColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Color; }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classQueen.html#acf3e2b5625791dc9f7579d4d7ba0f3db">  208</a></span>&#160;    <a class="code" href="classmyCell.html">myCell</a>* <a class="code" href="classQueen.html#acf3e2b5625791dc9f7579d4d7ba0f3db">getFigPosition</a>() { <span class="keywordflow">return</span> &amp;Pos; }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classQueen.html#a94efa1d459357153dcbdb673eef0c8ca">setFigPosition</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a> &amp;cell);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">bool</span> Color;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="classmyCell.html">myCell</a> Pos;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;};</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif // FIGURES_H</span></div>
+<div class="ttc" id="classRook_html_ac0edfc2179e01c5832355a2679ee63bd"><div class="ttname"><a href="classRook.html#ac0edfc2179e01c5832355a2679ee63bd">Rook::setFigColor</a></div><div class="ttdeci">void setFigColor(const bool color)</div><div class="ttdoc">setColor - sets the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:160</div></div>
+<div class="ttc" id="classPawn_html_a0aabc4f4929d1c49ce30d0ff937e174a"><div class="ttname"><a href="classPawn.html#a0aabc4f4929d1c49ce30d0ff937e174a">Pawn::getFigColor</a></div><div class="ttdeci">bool getFigColor() const </div><div class="ttdoc">getColor - shows the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:84</div></div>
+<div class="ttc" id="classKnight_html"><div class="ttname"><a href="classKnight.html">Knight</a></div><div class="ttdef"><b>Definition:</b> figures.h:110</div></div>
+<div class="ttc" id="classmyFigure_html"><div class="ttname"><a href="classmyFigure.html">myFigure</a></div><div class="ttdoc">The Figure class - abstract class for figures. </div><div class="ttdef"><b>Definition:</b> figures.h:14</div></div>
+<div class="ttc" id="classKing_html_a877ca4052d4fceceba52bfd87ca7deec"><div class="ttname"><a href="classKing.html#a877ca4052d4fceceba52bfd87ca7deec">King::getFigColor</a></div><div class="ttdeci">bool getFigColor() const </div><div class="ttdoc">getColor - shows the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:184</div></div>
+<div class="ttc" id="classKnight_html_ae89ed67b78c4af54695ea0d7c995f223"><div class="ttname"><a href="classKnight.html#ae89ed67b78c4af54695ea0d7c995f223">Knight::setFigColor</a></div><div class="ttdeci">void setFigColor(const bool color)</div><div class="ttdoc">setColor - sets the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:116</div></div>
+<div class="ttc" id="classmyFigure_html_ab493f940feba7a7ae78cd87233aed817"><div class="ttname"><a href="classmyFigure.html#ab493f940feba7a7ae78cd87233aed817">myFigure::~myFigure</a></div><div class="ttdeci">virtual ~myFigure()</div><div class="ttdoc">~Figure - destructor </div><div class="ttdef"><b>Definition:</b> figures.h:58</div></div>
+<div class="ttc" id="classmyFigure_html_a6564823393ae97e821ecc12e9cc6ca35"><div class="ttname"><a href="classmyFigure.html#a6564823393ae97e821ecc12e9cc6ca35">myFigure::getFigPosition</a></div><div class="ttdeci">virtual myCell * getFigPosition()=0</div><div class="ttdoc">getPosition - the position on the Board of the current figure </div></div>
+<div class="ttc" id="classRook_html_ac34e4615c4964fd19143333f42175eab"><div class="ttname"><a href="classRook.html#ac34e4615c4964fd19143333f42175eab">Rook::setFigPosition</a></div><div class="ttdeci">void setFigPosition(const myCell &amp;cell)</div><div class="ttdoc">setPosition - sets position of the current figure </div></div>
+<div class="ttc" id="classQueen_html_a94efa1d459357153dcbdb673eef0c8ca"><div class="ttname"><a href="classQueen.html#a94efa1d459357153dcbdb673eef0c8ca">Queen::setFigPosition</a></div><div class="ttdeci">void setFigPosition(const myCell &amp;cell)</div><div class="ttdoc">setPosition - sets position of the current figure </div></div>
+<div class="ttc" id="classmyFigure_html_ac015e4034d9364c2936b4a6c40afb3aa"><div class="ttname"><a href="classmyFigure.html#ac015e4034d9364c2936b4a6c40afb3aa">myFigure::setFigPosition</a></div><div class="ttdeci">virtual void setFigPosition(const myCell &amp;cell)=0</div><div class="ttdoc">setPosition - sets position of the current figure </div></div>
+<div class="ttc" id="classQueen_html_a8e061f7ef822c726217f887f04d6f5b7"><div class="ttname"><a href="classQueen.html#a8e061f7ef822c726217f887f04d6f5b7">Queen::getFigColor</a></div><div class="ttdeci">bool getFigColor() const </div><div class="ttdoc">getColor - shows the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:206</div></div>
+<div class="ttc" id="classBishop_html_a9476c797de0de5b7d064c8d7f728aa09"><div class="ttname"><a href="classBishop.html#a9476c797de0de5b7d064c8d7f728aa09">Bishop::getFigColor</a></div><div class="ttdeci">bool getFigColor() const </div><div class="ttdoc">getColor - shows the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:140</div></div>
+<div class="ttc" id="classBishop_html_a859e1ddeaf20ad44621efa8e7015f472"><div class="ttname"><a href="classBishop.html#a859e1ddeaf20ad44621efa8e7015f472">Bishop::setFigColor</a></div><div class="ttdeci">void setFigColor(const bool color)</div><div class="ttdoc">setColor - sets the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:138</div></div>
+<div class="ttc" id="classRook_html"><div class="ttname"><a href="classRook.html">Rook</a></div><div class="ttdef"><b>Definition:</b> figures.h:154</div></div>
+<div class="ttc" id="classKing_html_a0a5cf057a4fdb7cf48b4372c07549b4c"><div class="ttname"><a href="classKing.html#a0a5cf057a4fdb7cf48b4372c07549b4c">King::getFigPosition</a></div><div class="ttdeci">myCell * getFigPosition()</div><div class="ttdoc">getPosition - the position on the Board of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:186</div></div>
+<div class="ttc" id="classQueen_html_acf3e2b5625791dc9f7579d4d7ba0f3db"><div class="ttname"><a href="classQueen.html#acf3e2b5625791dc9f7579d4d7ba0f3db">Queen::getFigPosition</a></div><div class="ttdeci">myCell * getFigPosition()</div><div class="ttdoc">getPosition - the position on the Board of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:208</div></div>
+<div class="ttc" id="classKnight_html_ac51f10012ab2b2eeff188f50166f91e2"><div class="ttname"><a href="classKnight.html#ac51f10012ab2b2eeff188f50166f91e2">Knight::getFigColor</a></div><div class="ttdeci">bool getFigColor() const </div><div class="ttdoc">getColor - shows the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:118</div></div>
+<div class="ttc" id="classRook_html_a6254ea9761858887e2e4b26d945099f8"><div class="ttname"><a href="classRook.html#a6254ea9761858887e2e4b26d945099f8">Rook::getFigPosition</a></div><div class="ttdeci">myCell * getFigPosition()</div><div class="ttdoc">getPosition - the position on the Board of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:164</div></div>
+<div class="ttc" id="classmyCell_html"><div class="ttname"><a href="classmyCell.html">myCell</a></div><div class="ttdoc">The myCell class. </div><div class="ttdef"><b>Definition:</b> mycell.h:15</div></div>
+<div class="ttc" id="classBishop_html"><div class="ttname"><a href="classBishop.html">Bishop</a></div><div class="ttdef"><b>Definition:</b> figures.h:132</div></div>
+<div class="ttc" id="classPawn_html_a089522fb1c1950410313f1bef3d6fa06"><div class="ttname"><a href="classPawn.html#a089522fb1c1950410313f1bef3d6fa06">Pawn::setFigColor</a></div><div class="ttdeci">void setFigColor(const bool color)</div><div class="ttdoc">setColor - sets the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:80</div></div>
+<div class="ttc" id="classBishop_html_af89c108addcdb762752942c614b565ef"><div class="ttname"><a href="classBishop.html#af89c108addcdb762752942c614b565ef">Bishop::getFigPosition</a></div><div class="ttdeci">myCell * getFigPosition()</div><div class="ttdoc">getPosition - the position on the Board of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:142</div></div>
+<div class="ttc" id="classKing_html"><div class="ttname"><a href="classKing.html">King</a></div><div class="ttdef"><b>Definition:</b> figures.h:176</div></div>
+<div class="ttc" id="classKing_html_aa962d18712bc0621f9545d8fc667e340"><div class="ttname"><a href="classKing.html#aa962d18712bc0621f9545d8fc667e340">King::setFigColor</a></div><div class="ttdeci">void setFigColor(const bool color)</div><div class="ttdoc">setColor - sets the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:182</div></div>
+<div class="ttc" id="classKnight_html_ac838f1581e4d7b230209e59a60ef11a2"><div class="ttname"><a href="classKnight.html#ac838f1581e4d7b230209e59a60ef11a2">Knight::setFigPosition</a></div><div class="ttdeci">void setFigPosition(const myCell &amp;cell)</div><div class="ttdoc">setPosition - sets position of the current figure </div></div>
+<div class="ttc" id="classKing_html_a95fa16fe64eada7b4666d687f9d46289"><div class="ttname"><a href="classKing.html#a95fa16fe64eada7b4666d687f9d46289">King::setFigPosition</a></div><div class="ttdeci">void setFigPosition(const myCell &amp;cell)</div><div class="ttdoc">setPosition - sets position of the current figure </div></div>
+<div class="ttc" id="classmyFigure_html_a7d09f9c8ea910b7f8007ecd9dd9626a9"><div class="ttname"><a href="classmyFigure.html#a7d09f9c8ea910b7f8007ecd9dd9626a9">myFigure::setFigColor</a></div><div class="ttdeci">virtual void setFigColor(const bool color)=0</div><div class="ttdoc">setColor - sets the color of the current figure </div></div>
+<div class="ttc" id="classPawn_html_a0cfaa8bd3c59a92244f2aa674e337fd5"><div class="ttname"><a href="classPawn.html#a0cfaa8bd3c59a92244f2aa674e337fd5">Pawn::getFigPosition</a></div><div class="ttdeci">myCell * getFigPosition()</div><div class="ttdoc">getPosition - the position on the Board of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:89</div></div>
+<div class="ttc" id="classRook_html_afa12ce56bc0cf0dfc5d20d2a40cd71c6"><div class="ttname"><a href="classRook.html#afa12ce56bc0cf0dfc5d20d2a40cd71c6">Rook::getFigColor</a></div><div class="ttdeci">bool getFigColor() const </div><div class="ttdoc">getColor - shows the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:162</div></div>
+<div class="ttc" id="classPawn_html"><div class="ttname"><a href="classPawn.html">Pawn</a></div><div class="ttdef"><b>Definition:</b> figures.h:70</div></div>
+<div class="ttc" id="classmyFigure_html_adf2dd5aaff7e00cae0c10507736e4786"><div class="ttname"><a href="classmyFigure.html#adf2dd5aaff7e00cae0c10507736e4786">myFigure::getFigColor</a></div><div class="ttdeci">virtual bool getFigColor() const =0</div><div class="ttdoc">getColor - shows the color of the current figure </div></div>
+<div class="ttc" id="classQueen_html_afb9d66c27bba36c63df4b79b7c07510e"><div class="ttname"><a href="classQueen.html#afb9d66c27bba36c63df4b79b7c07510e">Queen::setFigColor</a></div><div class="ttdeci">void setFigColor(const bool color)</div><div class="ttdoc">setColor - sets the color of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:204</div></div>
+<div class="ttc" id="classQueen_html"><div class="ttname"><a href="classQueen.html">Queen</a></div><div class="ttdef"><b>Definition:</b> figures.h:198</div></div>
+<div class="ttc" id="classPawn_html_a22b0a387986d99fbb4954f671dd70ab1"><div class="ttname"><a href="classPawn.html#a22b0a387986d99fbb4954f671dd70ab1">Pawn::setFigPosition</a></div><div class="ttdeci">void setFigPosition(const myCell &amp;cell)</div><div class="ttdoc">setPosition - sets position of the current figure </div></div>
+<div class="ttc" id="classBishop_html_a5b0779aa7252e01645a5e5a0214c26cd"><div class="ttname"><a href="classBishop.html#a5b0779aa7252e01645a5e5a0214c26cd">Bishop::setFigPosition</a></div><div class="ttdeci">void setFigPosition(const myCell &amp;cell)</div><div class="ttdoc">setPosition - sets position of the current figure </div></div>
+<div class="ttc" id="classKnight_html_ae4e0c99a0a07effe4eee528dee0a93ab"><div class="ttname"><a href="classKnight.html#ae4e0c99a0a07effe4eee528dee0a93ab">Knight::getFigPosition</a></div><div class="ttdeci">myCell * getFigPosition()</div><div class="ttdoc">getPosition - the position on the Board of the current figure </div><div class="ttdef"><b>Definition:</b> figures.h:120</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по chess. Последние изменения: Чт 2 Июн 2016 14:29:18. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

@@ -290,18 +290,82 @@
 	\end{center}
 \end{figure}
 
-\subsection{Листинг}
 
-%\captionof{lstlisting}{hell\_o.c} % для печати символ '_' требует выходной символ '\'
-%\lstinputlisting[label=code:hello]{listings/hell_o.c}
-%\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
-Текст без отступа (следует за вставкой)
+\section*{Процесс обеспечения качества и тестирование}
+\addcontentsline{toc}{section}{Глава 4.Процесс обеспечения качества и тестирование}
 
-Новый параграф
+\subsection*{code review}
+\addcontentsline{toc}{subsection}{code review}
+В процессе работы на проектом было попрошено 2 code review:
+\begin{enumerate}
+\item Были высказаны незначительные замечания по поводу функциональности, предоставляемой интерфейсом ядра
+\item Было получено порядка 89 замечаний. В некоторых из них советовалось использовать спецификаторы стандарта c++11. Были замечания по стилевому оформлению кода, а так же указания на места возможной утечки памяти.
+\end{enumerate}
 
-\noindent Новый параграф с принудительно выключенным отступом
+\subsection*{Демонстрации}
+\addcontentsline{toc}{subsection}{Демонстрации}
+Всего было 2 демонстрации:
+\begin{enumerate}
+\item Отрисовка поля в консольном приложении\\
+Было единственное замечание о том, что необходимо было добавить разметку поля. Замечание было исправлено.\\
+\item Графическое приложение с возможностью перемещать фигуры в соответсвии с правилами.\\
+Было замечание по поводу отсутствия условия окончания игры и невозможности делать первый ход пешки на 2 клетки вперёд. Замечания были исправлены.\\
+\end{enumerate}
 
+\subsection*{Анализ кода}
+\addcontentsline{toc}{subsection}{Анализ кода}
+Был произведён анализ кода утилитой \textbf{Valgrind} на утечку памяти. Все выявленные замечания были исправлены.
 
+\section*{Вывод}
+\addcontentsline{toc}{section}{Глава 5. Вывод}
+За семестр было изучено огромное количество материала. Были получены навыки проектирования объектно-ориентированным методом, работы с UML-диаграммами, создания графического интерфейса с помощью библиотеки Qt. Получены знания о новых стандартах языка С++, об эффективном использовании данного языка.
+
+Были сделаны первые шаги в изучении паттернов объектно-оринтированного проектирования. Планируется в дальнейшем использовать(реализовать) некоторые из них в данном и последующих проектах.
+
+\section*{Приложения}
+\addcontentsline{toc}{section}{Приложения}
+
+\subsection*{Приложение 1}
+\addcontentsline{toc}{subsection}{Приложение1. Листинги}
+
+\subsubsection*{chessEngine}
+\addcontentsline{toc}{subsubsection}{chessEngine}
+
+\captionof{lstlisting}{API.h} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:API.h]{../../sources/chess/chessEngine/API.h}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{API.cpp} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:API.cpp]{../../sources/chess/chessEngine/API.cpp}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{boardLogic.h} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:boardLogic.h]{../../sources/chess/chessEngine/boardLogic.h}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{boardLogic.cpp} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:boardLogic.cpp]{../../sources/chess/chessEngine/boardLogic.cpp}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{exceptions.h} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:exceptions.h]{../../sources/chess/chessEngine/exceptions.h}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{figures.h} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:figures.h]{../../sources/chess/chessEngine/figures.h}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{figures.cpp} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:figures.cpp]{../../sources/chess/chessEngine/figures.cpp}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{mycell.h} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:mycell.h]{../../sources/chess/chessEngine/mycell.h}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\captionof{lstlisting}{mycell.cpp} % для печати символ '_' требует выходной символ '\'
+\lstinputlisting[label=code:mycell.cpp]{../../sources/chess/chessEngine/mycell.cpp}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
 
 \section{Выводы}
 \LaTeX\ удобен для создания отчётов, так как сам следит за нумерацией таблиц, рисунков, листингов и отсылок к ним (так, например, здесь всегда будет указан номер рисунка "sample" не зависимо от того, какой он (1,2 или другой) - это рисунок \ref{pic:pic_name}). Не менее важно что весь документ оформлен в едином стиле, а исходные материалы подключаются к отчёту, а не хранятся в нём. Всё это позволяет легко получить качественный отчёт без дополнительных трат на его офрмление.

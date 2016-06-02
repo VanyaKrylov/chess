@@ -12,7 +12,9 @@
 //Документировать класс. имя тут надо документировать.
 //TODO везде, где надо, добавить const, noexcept.
 //Определиться с *T и * T
-
+/**
+ * @brief The BoardLogic class - class which contains the Game board realisation and game logic
+ */
 class BoardLogic
 {
 public:
@@ -25,7 +27,7 @@ public:
      */
     
     //* fig 
-    void addMyFigure(myFigure* fig);
+    void addMyFigure(myFigure *fig);
 
     /**
      * @brief removeFigure - replaces figure from the current place on the board with a nullptr
@@ -54,12 +56,11 @@ public:
     bool isMyFigureSelected();
 
 
-    //TODO додокументировать x и y
+
     /**
-     * @brief getFigure - gets the Figure from the array
-     * @param x -
-     * @param y
-     * @return pointer to Figure object
+     * @brief getMyFigure - gets the pointer from the array
+     * @param pos - position in the array
+     * @return  pointer ti myFigure object
      */
     myFigure* getMyFigure(myCell* pos);
 
@@ -77,12 +78,14 @@ public:
      */
     bool checkPossibleMoves(myCell* pos);
 
+    /**
+     * @brief changePreviousColor changes the previousFigColor value
+     */
     void changePreviousColor();
 
 private:
     myFigure* pFigures[8][8];
     
-    //с маленькой буквы - неконстантные объекты. с большой - классы
     myFigure* selectedFigure;
     bool previousFigColor;
 

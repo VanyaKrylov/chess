@@ -25,8 +25,18 @@ public:
      */
     void moveMyFigure(int x, int y);
 
+    /**
+     * @brief getMyFigure return pointer to the object on current position
+     * @param x - horizontal coordinate
+     * @param y - vertical coordinate
+     * @return pointer to myFigure object
+     */
     myFigure* getMyFigure(int x, int y);
 
+    /**
+     * @brief isFigureSelected - checks whether the figure is selected or not
+     * @return TRUE if selected and FALSE if not
+     */
     bool isFigureSelected();
 
 

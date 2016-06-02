@@ -15,22 +15,34 @@ namespace Ui {
 class Board;
 
 }
-
+/**
+ * @brief The Board class
+ */
 class Board : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit Board(QWidget *parent = 0);
-    //int getXposCursor(QMouseEvent *pe);
-    //int getYposCursor(QMouseEvent *pe);
 
-
+    /**
+     * @brief select - selects the figure
+     * @param pe - pointer to MousePressEvent
+     */
     void select(QMouseEvent *pe);
+
+    /**
+     * @brief moveFig - moves the figure
+     * @param pe - pointer to MousePressEvent
+     */
     void moveFig(QMouseEvent *pe);
     ~Board();
 
 protected:
+    /**
+     * @brief mousePressEvent - overrided mousePressEvent
+     * @param pe - pointer to mousePressEvent
+     */
     virtual void mousePressEvent(QMouseEvent *pe);
 
 signals:

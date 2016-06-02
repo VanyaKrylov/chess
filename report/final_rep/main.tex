@@ -119,6 +119,8 @@
 	\end{center}
 \end{figure}
 
+
+
 \subsection*{chessEngine}
 \addcontentsline{toc}{subsection}{chessEngine}
 Ядро приложения, реализующее игровую логику.\\
@@ -141,9 +143,90 @@
 \addcontentsline{toc}{subsection}{Тесты}
 Будут реализованы позже
 
+\subsection*{Стандарты языка}
+\addcontentsline{toc}{subsection}{Стандарты языка}
+При создании приложения использовались:
+\begin{itemize}
+\item\textbf{c++98}\\
+\item\textbf{c++11}\\
+\end{itemize}
+
+\subsection*{Компилятор}
+\addcontentsline{toc}{subsection}{Компилятор}
+\textbf{GCC 4.9.1}\\
+
 \subsection*{Вывод}
 \addcontentsline{toc}{subsection}{Вывод}
 Был получен опыт работы с проектированием объектно-ориентированного приложения. 
+
+\section*{Реализация игры шахматы}
+\addcontentsline{toc}{section}{Глава 3. Реализация игры шахматы}
+
+\subsection*{Среда разработки}
+\addcontentsline{toc}{subsection}{Среда разработки}
+
+\noindent\textbf{IDE:}Qt Creator 3.5.0 (opensource)\\
+\textbf{OS:}Debian 3.14.1\\
+\textbf{Документация:}Doxygen 1.8.8\\
+\textbf{Компилятор:}GCC 4.9.1\\
+\textbf{Анализатор:}Valgrind 3.10.0\\
+\textbf{SVN:}Git 2.1.4
+
+\subsection*{chessEngine}
+\addcontentsline{toc}{subsection}{chessEngine}
+Ядро содержит 18 классов, из которых 1 является интерфейсом ядра, 7 - исключения, 7 классов используется для представления фигур, один класс задаёт структуру клетки, и один класс задаёт структуру игральной доски.\\
+\textbf{Основные классы:}\\
+\begin{itemize}
+\item\textbf{class myCell}\\
+Класс, задающий структуру клетки на игральной доске\\
+\item\textbf{class myFigure}\\
+Абстрактный класс, задающий общее представление об объектах фигур. От него наследуются все остальные классы фигур\\
+\item\textbf{class Pawn: public myFigure}\\
+Класс для представления пешек. Содержит цвет и позицию фигуры. Наследуется от myFigure\\
+\item\textbf{class Knight: public myFigure}\\
+Класс для представления фигуры "Конь". Содержит цвет и позицию фигуры. Наследуется от myFigure\\
+\item\textbf{class Rook: public myFigure}\\
+Класс для представления Ладьи. Содержит цвет и позицию фигуры. Наследуется от myFigure\\
+\item\textbf{class Bishop: public myFigure}\\
+Класс для предсталения фигуры "Слон". Содержит цвет и позицию фигуры. Наследуется от myFigure\\
+\item\textbf{class King: public myFigure}\\
+Класс для представления фигуры "Король". Содержит цвет и позицию фигуры. Наследуется от myFigure\\
+\item\textbf{class Queen: public myFigure}\\
+Класс для представления ферзя. Содержит цвет и позицию фигуры. Наследуется от myFigure\\
+\item\textbf{class BoardLogic}\\
+Класс для представления игральной доски. Содержит двумерный массив указателей на фигуры\\
+\item\textbf{class OutOfBoardException}\\
+Исключение, генерируемое при попытке походить за границы доски\\
+\item\textbf{class FigureNotSelectedException}\\
+Исключение, генерируемое при попытке сделать ход, не выбрав фигуру\\
+\item\textbf{class SameColorFigureException}\\
+Исключение, генерируемое при поытке атаковать собственную фигуру\\
+\item\textbf{class EmptyCellException}\\
+Исключение, генерируемое при попытке выбрать пустую клетку\\
+\item\textbf{class AgainstTheRulesException}\\
+Исключение, генерируемое при попытке переместить фигуру не по правилам игры\\
+\item\textbf{class WrongColorMoveException}\\
+Исключение, генерируемое при попытке переместить фигуру не в свой ход\\
+\item\textbf{class KingKilledException}\\
+Исключение, генерируемое при взятии короля\\
+\end{itemize}
+
+\subsection*{chessCUI}
+\addcontentsline{toc}{subsection}{chessCUI}
+Содержит один класс \textbf{class Game}, реализующий консольное приложение.\\
+
+\subsection*{chessGUI}
+\addcontentsline{toc}{subsection}{chessGUI}
+Содержит 3 класса для представления и отрисовки различных окон графического приложения:
+\begin{itemize}
+\item\textbf{class MainWindow: public QMainWindow}\\
+Класс для отображения нужного виджета в соответствии с запросом пользователя. С помощью QStackedWidget контролирует, чтобы одновременно отображалось только одно окно\\
+\item\textbf{class Dialog: public QDialog}\\
+Класс для отображения начального меню\\
+\item\textbf{class Board: public Qidget}\\
+Класс для графического представления игральной доски с фигурами\\
+\end{itemize}
+
 
 \subsection{Листинг}
 

@@ -8,6 +8,7 @@ chessGUI/chessGUI.depends = chessEngine
 
 SUBDIRS += \
     chessEngine \
-    chessGUI/chessGUI
+    chessGUI/chessGUI\
+    Tests
 
 

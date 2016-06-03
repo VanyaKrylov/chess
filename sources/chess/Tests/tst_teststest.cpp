@@ -18,23 +18,13 @@ private Q_SLOTS:
     void testSetColor();
     void testSetPosition();
     void testAPI();
-    void testBoard();
+
 };
 
 myTests::myTests()
 {
 }
 
-void myTests::testBoard()
-{
-    ChessEngine *core = new ChessEngine();
-    int j = 1;
-    for (int i = 0;i < 8; i++){
-        QCOMPARE(Pawn* p = dynamic_cast<Pawn*>(core->getMyFigure(i,j)),1);
-    }
-
-    delete core;
-}
 
 void myTests::testAPI()
 {

@@ -86,56 +86,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef MYCELL_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define MYCELL_H</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//Не нашел исключений в этом классе.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//TODO убрать лишний хэдер</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//TODO документировать класс. http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html\</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classmyCell.html">   15</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classmyCell.html">myCell</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//У Мейерса объяснено более подробно, почему так надо сделать.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classmyCell.html">myCell</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) : x(x), y(y) {}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classmyCell.html">myCell</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a>&amp; cell);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classmyCell.html#a2a7eee2e3aa57fadc468e8d939ea6b3e">   33</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classmyCell.html#a2a7eee2e3aa57fadc468e8d939ea6b3e">getXval</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> x; }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classmyCell.html#a3e79e8f9d573536c9ea31bb39669cc8f">   40</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classmyCell.html#a3e79e8f9d573536c9ea31bb39669cc8f">setXval</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x) { this-&gt;x=x; }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classmyCell.html#a3ebb288ee25c3433ad308b33f1f63b66">   48</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classmyCell.html#a3ebb288ee25c3433ad308b33f1f63b66">getYval</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> y; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classmyCell.html#abec1bdd600192ab5dd7f3d079777e2ca">   55</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classmyCell.html#abec1bdd600192ab5dd7f3d079777e2ca">setYval</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> y) { this-&gt;y=y; }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> x;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> y;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif // MYCELL_H</span></div>
-<div class="ttc" id="classmyCell_html_abec1bdd600192ab5dd7f3d079777e2ca"><div class="ttname"><a href="classmyCell.html#abec1bdd600192ab5dd7f3d079777e2ca">myCell::setYval</a></div><div class="ttdeci">void setYval(const int y)</div><div class="ttdoc">setYval - set y value </div><div class="ttdef"><b>Definition:</b> mycell.h:55</div></div>
-<div class="ttc" id="classmyCell_html_a3ebb288ee25c3433ad308b33f1f63b66"><div class="ttname"><a href="classmyCell.html#a3ebb288ee25c3433ad308b33f1f63b66">myCell::getYval</a></div><div class="ttdeci">int getYval() const </div><div class="ttdoc">getYval - get y value </div><div class="ttdef"><b>Definition:</b> mycell.h:48</div></div>
-<div class="ttc" id="classmyCell_html_a2a7eee2e3aa57fadc468e8d939ea6b3e"><div class="ttname"><a href="classmyCell.html#a2a7eee2e3aa57fadc468e8d939ea6b3e">myCell::getXval</a></div><div class="ttdeci">int getXval() const </div><div class="ttdoc">getXval - get x value </div><div class="ttdef"><b>Definition:</b> mycell.h:33</div></div>
-<div class="ttc" id="classmyCell_html"><div class="ttname"><a href="classmyCell.html">myCell</a></div><div class="ttdoc">The myCell class. </div><div class="ttdef"><b>Definition:</b> mycell.h:15</div></div>
-<div class="ttc" id="classmyCell_html_a3e79e8f9d573536c9ea31bb39669cc8f"><div class="ttname"><a href="classmyCell.html#a3e79e8f9d573536c9ea31bb39669cc8f">myCell::setXval</a></div><div class="ttdeci">void setXval(const int x)</div><div class="ttdoc">setXval - set x value </div><div class="ttdef"><b>Definition:</b> mycell.h:40</div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classmyCell.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmyCell.html">myCell</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classmyCell.html">myCell</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) noexcept : x(x), y(y) {}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classmyCell.html">myCell</a>(<span class="keyword">const</span> <a class="code" href="classmyCell.html">myCell</a>&amp; cell)noexcept;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classmyCell.html#abb3411d0ccf1cca8563947461a7ec363">   30</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmyCell.html#abb3411d0ccf1cca8563947461a7ec363">getXval</a>() const noexcept{ <span class="keywordflow">return</span> x; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classmyCell.html#afd0991873b064884bbc86be361926107">   37</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmyCell.html#afd0991873b064884bbc86be361926107">setXval</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x) noexcept { this-&gt;x=x; }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classmyCell.html#ae69421c4f47bdc725c86e397e8f99c4f">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmyCell.html#ae69421c4f47bdc725c86e397e8f99c4f">getYval</a>() const noexcept { <span class="keywordflow">return</span> y; }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classmyCell.html#a631b871d953343dca0e0178fe6326a4d">   51</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmyCell.html#a631b871d953343dca0e0178fe6326a4d">setYval</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> y) noexcept { this-&gt;y=y; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> x;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> y;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif // MYCELL_H</span></div>
+<div class="ttc" id="classmyCell_html_afd0991873b064884bbc86be361926107"><div class="ttname"><a href="classmyCell.html#afd0991873b064884bbc86be361926107">myCell::setXval</a></div><div class="ttdeci">void setXval(const int x) noexcept</div><div class="ttdoc">setXval - set x value </div><div class="ttdef"><b>Definition:</b> mycell.h:37</div></div>
+<div class="ttc" id="classmyCell_html_ae69421c4f47bdc725c86e397e8f99c4f"><div class="ttname"><a href="classmyCell.html#ae69421c4f47bdc725c86e397e8f99c4f">myCell::getYval</a></div><div class="ttdeci">int getYval() const noexcept</div><div class="ttdoc">getYval - get y value </div><div class="ttdef"><b>Definition:</b> mycell.h:44</div></div>
+<div class="ttc" id="classmyCell_html"><div class="ttname"><a href="classmyCell.html">myCell</a></div><div class="ttdoc">The myCell class. </div><div class="ttdef"><b>Definition:</b> mycell.h:14</div></div>
+<div class="ttc" id="classmyCell_html_a631b871d953343dca0e0178fe6326a4d"><div class="ttname"><a href="classmyCell.html#a631b871d953343dca0e0178fe6326a4d">myCell::setYval</a></div><div class="ttdeci">void setYval(const int y) noexcept</div><div class="ttdoc">setYval - set y value </div><div class="ttdef"><b>Definition:</b> mycell.h:51</div></div>
+<div class="ttc" id="classmyCell_html_abb3411d0ccf1cca8563947461a7ec363"><div class="ttname"><a href="classmyCell.html#abb3411d0ccf1cca8563947461a7ec363">myCell::getXval</a></div><div class="ttdeci">int getXval() const noexcept</div><div class="ttdoc">getXval - get x value </div><div class="ttdef"><b>Definition:</b> mycell.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по chess. Последние изменения: Чт 2 Июн 2016 14:29:18. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по chess. Последние изменения: Пт 3 Июн 2016 07:59:10. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

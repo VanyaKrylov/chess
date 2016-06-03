@@ -9,62 +9,50 @@
 //Написал про это еще в cpp.
 
 /**
- * @brief The Figure class - abstract class for figures
+ * @brief The myFigure class - abstract class for chess figures
  */
 class myFigure
 {
 public:
 
-    /**
-     * @brief getColor - shows the color of the current figure
-     * @return boolean value of the color. 0 - black, 1 - white
-     */
+
     
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
+
+
+    /**
+     * @brief getFigColor - shows the color of the figure
+     * @return bool value, 0 - black, 1 - white
+     */
     virtual bool getFigColor() const = 0;
 
+
+
+
     /**
-     * @brief setColor - sets the color of the current figure
-     * @param color: 0 - black, 1 - white
+     * @brief setFigColor sets the color for current figure
+     * @param color - 0 - black, 1 - white
      */
-    
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
     virtual void setFigColor(const bool color) = 0;
 
-    //virtual Figure* operator = (Figure* fig) = 0;
+    
+    /**
+     * @brief getFigPosition - gets figure position
+     * @return myCell object
+     */
+    virtual myCell* getFigPosition()   = 0;
 
     /**
-     * @brief getPosition - the position on the Board of the current figure
-     * @return reference to cell
+     * @brief setFigPosition sets figure position
+     * @param cell - myCell object
      */
-    
-    //TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual myCell* getFigPosition() = 0;
+    virtual void setFigPosition(const myCell &cell)  =0;
 
-    /**
-     * @brief setPosition - sets position of the current figure
-     * @param cell - position on board
-     */
-    
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual void setFigPosition(const myCell &cell)=0;
 
-    /**
-     * @brief ~Figure - destructor
-     */
-    
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    virtual ~myFigure(){}
+    virtual ~myFigure()  {}
 
 };
 
-    //TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception
-    //У Мейерса объяснено более подробно, почему так надо сделать.
 
-//От всех классов ниже ты ведь не наследуешься. Поэтому не нужно деструктор объявлять даже невиртуальный. Он и так сам сгенерируется.
 
 
 class Pawn: public myFigure
@@ -74,26 +62,16 @@ public:
     //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
     Pawn(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Pawn(){}
+
+    void setFigColor(const bool color)  override { this->Color=color; }
+
+    bool getFigColor() const override{ return Color; }
+       
+    myCell* getFigPosition()   override { return &Pos; }
+       
+    void setFigPosition(const myCell &cell) override;
     
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу Figure
-    void setFigColor(const bool color) { this->Color=color; }
-    
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception
-    bool getFigColor() const { return Color; }
-    
-    //TODO добавить спецификатор const, т.к метод не изменяет состояния объекта класса.
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу std::exception
-    myCell* getFigPosition() { return &Pos; }
-    
-    //TODO добавить спецификатор noexcept, т.к метод не генерирует исключений.
-    //TODO добавить спецификатор override, т.к реализация данного метода меняется по отношению к суперклассу Figure
-    void setFigPosition(const myCell &cell);
-    
-    //Кусок кода закомментированный. TODO убрать или допилить
-    //Figure* operator =(Figure* fig){
+
     
 private:
     //Мне кажется диким - использовать тип bool для цвета.
@@ -113,14 +91,13 @@ public:
     Knight(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Knight(){}
 
-    void setFigColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color)  override { this->Color=color; }
 
-    bool getFigColor() const { return Color; }
+    bool getFigColor() const override{ return Color; }
 
-    myCell* getFigPosition() { return &Pos; }
+    myCell* getFigPosition()   override { return &Pos; }
 
-    void setFigPosition(const myCell &cell);
-
+    void setFigPosition(const myCell &cell) override;
 
 private:
     bool Color;
@@ -135,13 +112,13 @@ public:
     Bishop(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Bishop(){}
 
-    void setFigColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color)  override { this->Color=color; }
 
-    bool getFigColor() const { return Color; }
+    bool getFigColor() const override{ return Color; }
 
-    myCell* getFigPosition() { return &Pos; }
+    myCell* getFigPosition()   override { return &Pos; }
 
-    void setFigPosition(const myCell &cell);
+    void setFigPosition(const myCell &cell) override;
 
 
 private:
@@ -157,13 +134,13 @@ public:
     Rook(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Rook(){}
 
-    void setFigColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color)  override { this->Color=color; }
 
-    bool getFigColor() const { return Color; }
+    bool getFigColor() const override{ return Color; }
 
-    myCell* getFigPosition() { return &Pos; }
+    myCell* getFigPosition()   override { return &Pos; }
 
-    void setFigPosition(const myCell &cell);
+    void setFigPosition(const myCell &cell) override;
 
 
 private:
@@ -179,13 +156,13 @@ public:
     King(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~King(){}
 
-    void setFigColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color)  override { this->Color=color; }
 
-    bool getFigColor() const { return Color; }
+    bool getFigColor() const override{ return Color; }
 
-    myCell* getFigPosition() { return &Pos; }
+    myCell* getFigPosition()   override { return &Pos; }
 
-    void setFigPosition(const myCell &cell);
+    void setFigPosition(const myCell &cell) override;
 
 
 private:
@@ -201,14 +178,13 @@ public:
     Queen(bool color, myCell& pos) : Color(color), Pos(pos) {}
     ~Queen(){}
 
-    void setFigColor(const bool color) { this->Color=color; }
+    void setFigColor(const bool color)  override { this->Color=color; }
 
-    bool getFigColor() const { return Color; }
+    bool getFigColor() const override{ return Color; }
 
-    myCell* getFigPosition() { return &Pos; }
+    myCell* getFigPosition()   override { return &Pos; }
 
-    void setFigPosition(const myCell &cell);
-
+    void setFigPosition(const myCell &cell) override;
 
 private:
     bool Color;

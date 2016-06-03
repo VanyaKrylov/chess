@@ -6,12 +6,11 @@
 #include "exceptions.h"
 
 
-//TODO в c++ используется cmath
-#include <math.h>
 
-//Документировать класс. имя тут надо документировать.
-//TODO везде, где надо, добавить const, noexcept.
-//Определиться с *T и * T
+#include <cmath>
+
+
+
 /**
  * @brief The BoardLogic class - class which contains the Game board realisation and game logic
  */
@@ -25,16 +24,12 @@ public:
      * @brief addFigure - adding a figure to the board
      * @param fig - pointer to Figure object
      */
-    
-    //* fig 
     void addMyFigure(myFigure *fig);
 
     /**
      * @brief removeFigure - replaces figure from the current place on the board with a nullptr
      * @param pos - reference to Cell object of the figure's position
      */
-    
-    //*pos - везде по-разному
     void removeMyFigure(myCell *pos);
 
     /**
@@ -62,11 +57,10 @@ public:
      * @param pos - position in the array
      * @return  pointer ti myFigure object
      */
-    myFigure* getMyFigure(myCell* pos);
+    myFigure* getMyFigure(myCell *pos);
 
     /**
-     * @brief getSelectedFigure - returns the selected figure
-    //лучше без returns.
+     * @brief getSelectedFigure - gets the selected figure
      * @return returns pointer to the SelectedFigure
      */
     myFigure* getSelectedFigure();
@@ -76,7 +70,7 @@ public:
      * @param pos - pointer to Cell object, position where the figure is supposed to be moves
      * @return TRUE if the rules are not broken, False otherwise
      */
-    bool checkPossibleMoves(myCell* pos);
+    bool checkPossibleMoves(myCell *pos);
 
     /**
      * @brief changePreviousColor changes the previousFigColor value

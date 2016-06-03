@@ -17,10 +17,34 @@ private Q_SLOTS:
     void testGetFigure();
     void testSetColor();
     void testSetPosition();
+    void testAPI();
+    void testBoard();
 };
 
 myTests::myTests()
 {
+}
+
+void myTests::testBoard()
+{
+    ChessEngine *core = new ChessEngine();
+    int j = 1;
+    for (int i = 0;i < 8; i++){
+        QCOMPARE(Pawn* p = dynamic_cast<Pawn*>(core->getMyFigure(i,j)),1);
+    }
+
+    delete core;
+}
+
+void myTests::testAPI()
+{
+    ChessEngine *core = new ChessEngine();
+    core->chooseMyFigure(1,1);
+    myCell pos(1,1);
+    QCOMPARE(core->isFigureSelected(),1);
+    QVERIFY_EXCEPTION_THROWN(core->moveMyFigure(3,3),std::exception);
+    QVERIFY_EXCEPTION_THROWN(core->chooseMyFigure(-1,0),std::exception);
+    delete core;
 }
 
 void myTests::testSelectFigure()
